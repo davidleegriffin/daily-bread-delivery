@@ -2,23 +2,23 @@
 
 # MVP's
 
--splash/welcome
--login/signup
--home/products
--shopping cart/order
--payment/delivery(functionality for accepting payments will be added after scope of class)
--users invoices
--BONUS add widget to track price of wheat/baking commodities
+- splash/welcome
+- login/signup
+- home/products
+- shopping cart/order
+- payment/delivery(functionality for accepting payments will be added after scope of class)
+- users invoices
+- BONUS add widget to track price of wheat/baking commodities
 
 
 # Frontend
 
--Uses React/Redux 
+- Uses React/Redux 
 
 
 # Backend
 
--Uses express/sequelize
+- Uses express/sequelize
 
 
 # Database Schema
@@ -29,10 +29,21 @@
 # API Endpoints
 
 ## GET
+      "/"
+      "/login"
+      "/home"
+      "/order"
+      "/payment"
+      "/invoices/user"
+      "/invoices/user/:id"
 
-##POST
+## POST
+      "/login"
+      "/signup"
+      "/order"
+      "/payment"
+      
 
-
-# technologies used
+# Technologies Used
 
 -Node-JS, express, react, redux, sequelize
