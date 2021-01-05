@@ -21,6 +21,7 @@
 # Database Schema
 
 -Insert diagram here
+![](./Daily)
 
 # Routes
 
