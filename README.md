@@ -1,4 +1,4 @@
-# daily-bread-delivery
+# DAILY BREAD DELIVERY
 
 # MVP's
 
@@ -18,9 +18,13 @@
 
 -Uses express/sequelize
 
-# database schema
+# Database Schema
 
 -Insert diagram here
+
+# Routes
+
+-
 
 # technologies used
 
