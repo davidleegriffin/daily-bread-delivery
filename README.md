@@ -46,4 +46,11 @@
 
 # Technologies Used
 
--Node-JS, express, react, redux, sequelize
+- Node-JS 
+- Express 
+- React 
+- Redux 
+- Sequelize
+- SQL
+- PostgreSQL
+
