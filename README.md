@@ -21,7 +21,7 @@
 # Database Schema
 
 -Insert diagram here
-![](./Daily)
+![]('./daily-bread-delivery-database-schema.png')
 
 # Routes
 
