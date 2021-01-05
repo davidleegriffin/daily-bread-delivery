@@ -10,21 +10,28 @@
 -users invoices
 -BONUS add widget to track price of wheat/baking commodities
 
+
 # Frontend
 
 -Uses React/Redux 
+
 
 # Backend
 
 -Uses express/sequelize
 
+
 # Database Schema
 
 ![Database Schema](./daily-bread-delivery-database-schema.png)
 
-# Routes
 
--
+# API Endpoints
+
+## GET
+
+##POST
+
 
 # technologies used
 
