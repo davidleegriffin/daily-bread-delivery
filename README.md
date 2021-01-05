@@ -20,8 +20,7 @@
 
 # Database Schema
 
--Insert diagram here
-![]('./daily-bread-delivery-database-schema.png')
+![Database Schema](./daily-bread-delivery-database-schema.png)
 
 # Routes
 
