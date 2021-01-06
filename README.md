@@ -38,7 +38,7 @@
 
 # Database Schema
 
-![Database Schema]()
+![Database Schema](./DBD-database-schema.png)
 
 
 # API Endpoints
