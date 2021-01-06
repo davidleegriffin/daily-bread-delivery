@@ -33,6 +33,7 @@
 - payment
 - invoices
 - reviews
+- bakers
 
 
 # Database Schema
