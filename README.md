@@ -2,23 +2,23 @@
 
 # MVP's
 
-- splash/welcome
 - login/signup
 - home/products
 - shopping cart/order
 - payment/delivery(functionality for accepting payments will be added after scope of class)
 - users invoices
+- reviews
 - BONUS add widget to track price of wheat/baking commodities
 
 
 # Frontend
 
-- Uses React/Redux 
+- Uses React/Redux (todo: add screen shots and paragraph)
 
 
 # Backend
 
-- Uses express/sequelize
+- Uses express/sequelize (todo: add screen shots and paragraph)
 
 
 # Database Schema
