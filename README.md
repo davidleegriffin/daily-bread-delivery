@@ -4,11 +4,13 @@
 
 - login/signup
 - home/products
+- host product/user photos on S3
 - shopping cart/order
 - payment/delivery(functionality for accepting payments will be added after scope of class)
 - users invoices
 - reviews
 - BONUS add widget to track price of wheat/baking commodities
+- BONUS ability to upload photos
 
 
 # Frontend
@@ -35,7 +37,7 @@
 
 # Database Schema
 
-![Database Schema](./DBD-database-schema.png)
+![Database Schema]()
 
 
 # API Endpoints
@@ -49,6 +51,8 @@
       "/invoices/user"
       "/invoices/user/:id"
       "/reviews"
+      "/bakers"
+      "/bakers/:id"
 
 ## POST
       "/login"
