@@ -23,7 +23,7 @@
 
 # Database Schema
 
-![Database Schema]()
+![Database Schema](./DBD-database-schema.png)
 
 
 # API Endpoints
@@ -36,12 +36,14 @@
       "/payment"
       "/invoices/user"
       "/invoices/user/:id"
+      "/reviews"
 
 ## POST
       "/login"
       "/signup"
       "/order"
       "/payment"
+      "/reviews"
       
 
 # Technologies Used
