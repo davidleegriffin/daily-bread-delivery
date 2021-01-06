@@ -23,7 +23,7 @@
 
 # Database Schema
 
-![Database Schema](./daily-bread-delivery-database-schema.png)
+![Database Schema]()
 
 
 # API Endpoints
