@@ -21,6 +21,18 @@
 - Uses express/sequelize (todo: add screen shots and paragraph)
 
 
+# Components
+
+- splash
+- login
+- signup
+- home
+- order
+- payment
+- invoices
+- reviews
+
+
 # Database Schema
 
 ![Database Schema](./DBD-database-schema.png)
