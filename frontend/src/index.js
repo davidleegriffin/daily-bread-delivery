@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { restoreCSRF, fetch } from './store/csrf';
 import './index.css';
 import App from './App';
+import * as sessionActions from './store/session';
 import configureStore from './store';
 
 const store = configureStore();
@@ -14,15 +15,16 @@ if (process.env.NODE_ENV !== 'production') {
 
   window.csrfFetch = fetch;
   window.store = store;
+  window.sessionActions = sessionActions;
 }
 
 function Root() {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
+    // </Provider>
   );
 }
 

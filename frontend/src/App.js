@@ -1,8 +1,14 @@
 import React from 'react';
+import { Route, Switch } from "react-router-dom";
+import SplashPage from './components/SplashPage.js';
 
 function App() {
   return (
-    <h1>Daily Bread Delivery</h1>
+    <>
+      {/* <Switch> */}
+       
+      {/* </Switch> */}
+    </>
   );
 }
 
