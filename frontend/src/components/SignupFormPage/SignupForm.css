@@ -48,3 +48,19 @@
   margin-top: 20px;
   margin-left: 110px;
 }
+
+.signup__button-container--left {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup__button-container--right {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

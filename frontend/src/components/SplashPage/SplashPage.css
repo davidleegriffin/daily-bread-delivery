@@ -30,3 +30,19 @@
   margin-top: 44px;
   font-size: large;
 }
+
+.splash__button-container--left {
+  grid-column-start: 1;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash__button-container--right {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

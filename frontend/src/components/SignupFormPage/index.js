@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -17,6 +18,7 @@ function SignupFormPage() {
   const [avatar, setAvatar] = useState("");
   const [baker, setBaker] = useState(false);
   const [errors, setErrors] = useState([]);
+  const history = useHistory();
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -39,10 +41,19 @@ function SignupFormPage() {
     document.getElementById("signupForm").reset();
   };
 
-  
+  const welcomeSplash = (e) => {
+    history.push("/");
+  };
+
+  const loginSplash = (e) => {
+    history.push("/login");
+  };
 
   return (
     <div className="signup__main-container">
+      <div className="signup__button-container--left">
+        <button className="signup__welcome-button" onClick={welcomeSplash}>Welcome</button>
+      </div>
       <div className="signup__error-container">
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -144,6 +155,9 @@ function SignupFormPage() {
           <button className="signup__submit-button" type="submit">Sign Up</button>
           </div>
         </form>
+      </div>
+      <div className="signup__button-container--right">
+        <button className="signup__login-button" onClick={loginSplash}>Login</button>
       </div>
     </div>
   );
