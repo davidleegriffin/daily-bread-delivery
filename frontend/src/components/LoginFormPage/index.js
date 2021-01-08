@@ -7,19 +7,17 @@ import './LoginForm.css';
 function LoginFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
-  const [credential, setCredential] = useState('');
+  const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
-  // if (sessionUser) return (
-  //   <Redirect to="/" />
-  // );
+  if (sessionUser) return (<Redirect to="/" />);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
     resetForm();
-    return dispatch(sessionActions.login({ credential, password }))
+    return dispatch(sessionActions.login({ email, password }))
       .catch((res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
       });
@@ -29,39 +27,41 @@ function LoginFormPage() {
     document.getElementById("loginForm").reset();
   };
 
-  // resetForm();
-
   return (
-    <div className="form-wrapper">
-    <form className="form-login" onSubmit={handleSubmit} id="loginForm">
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <h2>Login</h2>  
-      <div className="input-wrapper">
-        <input
-          type="text"
-          value={credential}
-          onChange={(e) => setCredential(e.target.value)}
-          required=""
-          className="login-form__name"
-          name=""
-        />
-        <label className="login-form__label--name">Username or Email</label>
+    <div className="login__form-wrapper">
+      <div>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
       </div>
-      <div className="input-wrapper">  
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required=""
-          className="login-form__password"
-            name=""
-        />
-        <label className="login-form__label--password">Password</label>
-      </div>  
-      <button type="submit" className="login-form__button">Log In</button>
-    </form>
+      <form className="login__form-login" onSubmit={handleSubmit} id="loginForm">
+        <div className="login__input-wrapper--main">  
+          <h2>Login</h2>  
+          <div className="login__input-wrapper--email">
+            <label className="login__input-label--email">Email</label>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setemail(e.target.value)}
+              required=""
+              className="login__input--email"
+              name=""
+            />
+          </div>
+          <div className="login__input-wrapper--password">  
+            <label className="login__input-label--password">Password</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required=""
+              className="login__input--password"
+                name=""
+            />
+          </div>  
+          <button type="submit" className="login__submit-button">Log In</button>
+        </div>    
+      </form>
     </div>
   );
 }

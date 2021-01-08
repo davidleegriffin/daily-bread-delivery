@@ -35,10 +35,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       avatar: {
+        allowNull: true,
         type: Sequelize.STRING(255)
       },
       baker: {
-        allowNull: false,
+        allowNull: true,
         type: Sequelize.BOOLEAN
       },
       createdAt: {

@@ -16,13 +16,13 @@ module.exports = (sequelize, DataTypes) => {
     static getCurrentUserById(id) {
       return User.scope("currentUser").findByPk(id);
     }
-    static async login({ credential, password }) {
+    static async login({ email, password }) {
       const { Op } = require('sequelize');
       const user = await User.scope('loginUser').findOne({
         where: {
           [Op.or]: {
-            // email: credential,
-            email: credential,
+            // email: email,
+            email: email,
           },
         },
       });
@@ -66,34 +66,53 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       address: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(100),
         unique: true,
         allowNull: false,
+        validate: {
+          len: [1, 100],
+        },
       },
       city: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
+        validate: {
+          len: [1, 50],
+        },
       },
       state: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
+        validate: {
+          len: [1, 50],
+        },
       },
       zip: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        validate: {
+          len: [1, 10],
+        },
       },
-      avatar: DataTypes.STRING,
+      avatar: {
+        type: DataTypes.STRING(255),
+        allowNull: true,
+        validate: {
+          len: [0, 255],
+        },
+      },
       baker: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
-      },
+        allowNull: true,
+        },
+      
     },
     {
       sequelize,
       modelName: 'User',
       defaultScope: {
         attributes: {
-          exclude: ["hashedPassword", "email", "createdAt", "updatedAt"],
+          exclude: ["hashedPassword", "email", "createdAt", "updatedAt", "address", "city", "state", "zip", "avatar", "baker"],
         },
       },
       scopes: {
