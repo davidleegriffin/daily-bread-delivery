@@ -5,8 +5,8 @@
 - login/signup
 - home/products
 - host product/user photos on S3
-- shopping cart/order
-- payment/delivery(functionality for accepting payments will be added after scope of class)
+- shopping cart/checkout
+- *payment/delivery(functionality for accepting payments will be added after scope of class)
 - users invoices
 - reviews
 - BONUS add widget to track price of wheat/baking commodities
@@ -29,7 +29,7 @@
 - login
 - signup
 - home
-- order
+- shopping cart/checkout
 - payment
 - invoices
 - reviews
@@ -48,7 +48,7 @@
       "/login"
       "/home"
       "/order"
-      "/payment"
+      "/checkout"
       "/invoices/user"
       "/invoices/user/:id"
       "/reviews"
@@ -59,7 +59,7 @@
       "/login"
       "/signup"
       "/order"
-      "/payment"
+      "/checkout"
       "/reviews"
       
 
@@ -72,4 +72,5 @@
 - Sequelize
 - SQL
 - PostgreSQL
+- React-slick
 
