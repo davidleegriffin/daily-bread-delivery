@@ -10,9 +10,8 @@
 }
 
 .home__main-container {
-  display: grid;
-  width: 100%;
-  height: 600px;
+  width: 100maxvh;
+  height: 100vh;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-template-rows: 10% 45% 35% 10%; 
@@ -44,6 +43,13 @@
   margin-right: 20px;
 }
 
+.home__image--left {
+  border-radius: 50%;
+  margin-top: 40px;
+  border: rgba(250, 250, 4, 0.2) solid 7px;
+}
+
+
 .home__image-container--chalkboard {
   background: url("./chalkboard.jpg");
   background-repeat: no-repeat;
@@ -71,4 +77,21 @@
 .home__chalkboard-text--content {
   font-family: EraserRegular;
   position: relative;
+}
+
+.home__image--right {
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-left: -69px;
+  border: rgba(250, 250, 4, 0.2) solid 7px;
+}
+
+.home__image--bottom {
+ margin-top: 5%
+}
+
+.home__image-container--bottom {
+  grid-column-start: 2;
+  display: flex;
+  justify-content: center;
 }

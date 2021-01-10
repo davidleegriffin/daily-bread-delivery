@@ -28,7 +28,16 @@ function HomePage() {
       <div className="home__button-container--logout">
         <button className="logout-button" onClick={logout}>Log Out</button>
       </div>
-      <div></div>
+      <div>
+        <img
+          className="home__image--left"
+          src="https://images.unsplash.com/photo-1549057188-efd70413345e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGJha2VyeXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt="bakery action"
+          width="120%"
+          height="120%"
+        >
+        </img>
+      </div>
       <div className="home__image-container--chalkboard">
         <span className="home__chalkboard-text--container">
             <h2>WELCOME TO DAILY BREAD DELIVERY</h2>
@@ -42,6 +51,26 @@ function HomePage() {
             delivery will be next day
           </p>
         </span>
+      </div>
+      <div>
+        <img
+          className="home__image--right"
+          src="https://images.unsplash.com/photo-1560427183-4efd29c38997?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fGJha2VyeXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt="bakery peel action"
+          width="120%"
+          height="120%"
+        >
+        </img>
+      </div>
+      <div className="home__image-container--bottom">
+        <img
+          className="home__image--bottom"
+          src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+          alt="bread"
+          // width="60%"
+         
+        >
+        </img>
       </div>
     </div>
   )

@@ -150,7 +150,7 @@ function SignupFormPage() {
               onChange={(e) => setBaker(e.target.value)}
               required
               className="signup__input-fields--baker"
-            />
+            />yes
           </label>  
           <button className="signup__submit-button" type="submit">Sign Up</button>
           </div>
