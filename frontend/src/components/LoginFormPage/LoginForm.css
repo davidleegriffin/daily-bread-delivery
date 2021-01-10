@@ -7,7 +7,9 @@
 }
 
 .login__form-login {
-  /* background-image: url("https://images.unsplash.com/photo-1509440159596-0249088772ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80"); */
+  font-family: Indie Flower;
+  font-size: 1.2rem;
+  font-weight: 900;
   width: 712px;
   height: 500px;
   position:relative;
@@ -20,9 +22,9 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.6);
   width: 206px;
-  height: 206px;
+  height: 216px;
   color: black;
   margin-top: 236px;
   margin-left: 100px;
@@ -30,9 +32,32 @@
   padding: 15px;
 }
 
-.login__submit-button {
-  margin: 30px;
+.login__input-wrapper--main > span{
   align-self: center;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+.login__input--email {
+  box-shadow: 1px 1px 10px 7px beige;
+}
+
+.login__input--password {
+  box-shadow: 1px 1px 10px 7px beige;
+}
+
+.login__submit-button {
+  font-family: Indie Flower;
+  font-size: large;
+  font-weight: 900;
+  width: 40%;
+  margin: 20px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  align-self: center;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+  box-shadow: 1px 1px 10px 7px rgba(100, 100, 100, 0.3);
+  outline: 1px solid rgba(100, 100, 100, 0.05);
 }
 
 .login__button-container--right {
@@ -43,10 +68,38 @@
   align-items: center;
 }
 
+.login__signup-button {
+  font-family: Indie Flower;
+  font-size: 2rem;
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 3em;
+  background-color: white;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+  box-shadow: 0px 0px 30px 7px rgba(100, 100, 100, 0.3);
+  outline: 1px solid rgba(100, 100, 100, 0.05);
+  border: none;
+}
+
 .login__button-container--left {
   grid-column-start: 1;
   grid-row-start: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.login__welcome-button {
+  font-family: Indie Flower;
+  font-size: 2rem;
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  margin-top: 3em;
+  background-color: white;
+  box-shadow: 0px 0px 30px 7px rgba(100, 100, 100, 0.3);
+  outline: 1px solid rgba(100, 100, 100, 0.05);
+  border: none;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
 }

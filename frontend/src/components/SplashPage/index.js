@@ -26,7 +26,7 @@ function SplashPage() {
   return (
     <div className="splash__main-container">
       <div className="splash__button-container--left">
-        <button className="login-button" onClick={loginSplash}>Login</button>
+        <button className="splash__login-button" onClick={loginSplash}>Login</button>
       </div>
       <img className="splash__image--background" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" ></img>
       <div className="splash__main-intro">
