@@ -31,6 +31,7 @@
   justify-content: center;
   grid-column-start: 4;
   grid-row-start: 1;
+  margin-top: 5px;
 }
 
 .home__button-container--logout {
@@ -71,7 +72,7 @@
 .home__chalkboard-text--container {
   display: flex;
   flex-direction: column;
-  width: 75%;
+  width: 70%;
   font-family: EraserRegular;
 }
 
@@ -92,7 +93,19 @@
   grid-column-end: 6;
   grid-row-start: 2;
   grid-row-end: 2;
-  margin: 100px;
+  margin-top: 50px;
+  width: 95%;
+}
+
+.home__slider-elements {
+  font-family: Indie Flower;
+  font-weight: 800;
+  text-align: center;
+}
+
+.home__slider-elements h2 {
+  margin-bottom: 0px;
+  font-size: x-large;
 }
 
 .slick-dots {

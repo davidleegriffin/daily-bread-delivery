@@ -10,7 +10,15 @@ function NextArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "inline", background: "rgba(0,0,0,0.75)" }}
+      style={{
+              ...style,
+              display: "inline",
+              background: "rgba(0,0,0,0.75)",
+              borderRadius: "50%",
+              border: "1px solid black",
+              marginRight: "10%",
+              boxShadow: "0px 0px 25px 20px rgba(230, 230, 4, 0.5)"
+            }}
       onClick={onClick}
     />
   );
@@ -21,7 +29,17 @@ function PrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "inline", background: "rgba(0,0,0,0.75)" }}
+      style={{
+              ...style,
+              display: "inline",
+              background: "rgba(0,0,0,0.75)",
+              borderRadius: "50%",
+              border: "1px solid black",
+              size: "50px",
+              marginLeft: "13%",
+              boxShadow: "0px 0px 25px 20px rgba(230, 230, 4, 0.5)",
+              zIndex: "2"
+      }}
       onClick={onClick}
     />
   );
@@ -32,7 +50,7 @@ function HomePage() {
   const history = useHistory();
 
   const settings = {
-    dots: true,
+      dots: true,
       lazyLoad: true,
       infinite: true,
       speed: 500,
@@ -40,8 +58,8 @@ function HomePage() {
       slidesToScroll: 1,
       initialSlide: 1,
       adaptiveHeight: true,
-    centerMode: true,
-      centerPadding: '100px',
+      centerMode: true,
+      centerPadding: '150px',
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />
   };
@@ -83,6 +101,7 @@ function HomePage() {
       <div className="home__image-container--bottom">
         <Slider {...settings}>
           <div className="home__slider-elements">
+            <h2>Cowboy Bebop</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -91,6 +110,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Karem's French Boule</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1603984042729-a34adc2ac9d0?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTV8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -99,6 +119,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Farmhouse Wheat</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1533417177250-227597f5b264?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTh8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -107,6 +128,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Smoked Bread</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1511629036492-6c07153d3e83?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTZ8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -115,6 +137,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Rustic Italian/Ciabatta</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1590346328376-f21c8e5b630e?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -123,6 +146,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Irish Soda Bread</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1584471973216-cadfdf0e15e5?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTR8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
@@ -131,6 +155,7 @@ function HomePage() {
             </img>
           </div>
           <div className="home__slider-elements">
+            <h2>Rye Campagne</h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1534620808146-d33bb39128b2?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
