@@ -39,11 +39,28 @@
 }
 
 .login__input--email {
-  box-shadow: 1px 1px 10px 7px beige;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  /* box-shadow: 1px 1px 10px 7px beige; */
 }
 
 .login__input--password {
-  box-shadow: 1px 1px 10px 7px beige;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.login__input--email:hover, 
+.login__input--password:hover {
+  box-shadow: 2px 2px 10px 10px beige;
+  border: 1px solid black;
+}
+
+.login__input--email:hover, 
+.login__input--password:hover {
+  box-shadow: 2px 2px 10px 10px beige;
+  border: 1px solid black;
 }
 
 .login__submit-button {
