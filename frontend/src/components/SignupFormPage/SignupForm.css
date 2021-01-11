@@ -68,9 +68,12 @@
 }
 
 .signup__welcome-button {
+  background-image: url("https://cdn4.iconfinder.com/data/icons/art-deco/2126/art_deco_28-512.png");
+  background-position: center;
+  background-size: cover;
   font-family: Indie Flower;
   font-size: 2rem;
-  width: 80%;
+  width: 87%;
   height: 100%;
   border-radius: 10px;
   margin-top: 3em;
@@ -90,9 +93,12 @@
 }
 
 .signup__login-button {
+  background-image: url("https://cdn4.iconfinder.com/data/icons/art-deco/2126/art_deco_28-512.png");
+  background-position: center;
+  background-size: cover;
   font-family: Indie Flower;
   font-size: 2rem;
-  width: 80%;
+  width: 87%;
   height: 100%;
   border-radius: 10px;
   margin-top: 3em;
