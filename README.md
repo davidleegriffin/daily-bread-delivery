@@ -6,10 +6,8 @@
 - home/products
 - host product/user photos on S3
 - shopping cart/checkout
-- *payment/delivery(functionality for accepting payments will be added after scope of class)
 - users invoices
 - reviews
-- BONUS add widget to track price of wheat/baking commodities
 - BONUS ability to upload photos
 
 
