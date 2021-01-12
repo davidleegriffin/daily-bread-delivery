@@ -10,36 +10,11 @@ import HomePage from './components/HomePage';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState();
-  const [cart, setCart] = useState([]);
   // const sessionUser = useSelector(state => state.session.user);
-
-  let localCart = localStorage.getItem("cart");
-
-  const addItem = (item) => {
-    let cartCopy = [...cart];
-    let { ID } = item;
-    let existingItem = cartCopy.find(cartItem => cartItem.ID == ID);
-    if (existingItem) {
-      existingItem.quantity += item.quantity
-    } else {
-      cartCopy.push(item)
-    }
-    setCart(cartCopy)
-    let stringCart = JSON.stringify(cartCopy);
-    localStorage.setItem("cart", stringCart)
-  }
-
-  const updateItem = (itemID, amount) => {}
-  const removeItem = (itemID) => {}
 
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
-
-  useEffect(() => {
-    localCart = JSON.parse(localCart);
-    if (localCart) setCart(localCart)
-  }, []);
 
   return (
     <div>

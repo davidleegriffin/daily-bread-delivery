@@ -16,7 +16,7 @@
 @keyframes transitionDown {
   from {
       opacity: 0;
-      transform: translateY(-100px);
+      transform: translateY(-200px);
   }
 
   to {
@@ -29,7 +29,7 @@
 @keyframes transitionUp {
   from {
       opacity: 0;
-      transform: translateY(100px);
+      transform: translateY(200px);
   }
 
   to {
