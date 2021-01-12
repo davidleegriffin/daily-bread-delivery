@@ -1,15 +1,35 @@
 
 
 
-div {
-  animation: transitionIn 0.75s;
+.effects, .home__image--bottom {
+  animation: transitionDown 0.75s;
+}
+
+.splash__image--background,
+.signup__image--background,
+.login__image--background,
+.home__image-container--chalkboard {
+  animation: transitionUp 0.75s;
 }
 
 
-@keyframes transitionIn {
+@keyframes transitionDown {
   from {
       opacity: 0;
       transform: translateY(-100px);
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0deg);
+
+  }
+}
+
+@keyframes transitionUp {
+  from {
+      opacity: 0;
+      transform: translateY(100px);
   }
 
   to {

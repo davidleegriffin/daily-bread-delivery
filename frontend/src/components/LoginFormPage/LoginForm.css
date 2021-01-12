@@ -43,24 +43,31 @@
   border: none;
   background-color: transparent;
   /* box-shadow: 1px 1px 10px 7px beige; */
+  transition: transform 1s;
 }
 
 .login__input--password {
   outline: none;
   border: none;
   background-color: transparent;
+  transition: transform 0.75s;
+
 }
 
 .login__input--email:hover, 
 .login__input--password:hover {
+  background-color:  rgba(255, 255, 255, 0.8);
   box-shadow: 2px 2px 10px 10px beige;
   border: 1px solid black;
+  transform: scale(1.83);
 }
 
-.login__input--email:hover, 
-.login__input--password:hover {
+.login__input--email:focus, 
+.login__input--password:focus {
+  background-color:  rgba(255, 255, 255, 0.8);
   box-shadow: 2px 2px 10px 10px beige;
   border: 1px solid black;
+  transform: scale(1.83);
 }
 
 .login__submit-button {

@@ -84,7 +84,7 @@ function HomePage() {
         <button className="home__logout-button" onClick={logout}>Log Out</button>
       </div>
   
-      <div className="home__image-container--chalkboard">
+      <div className="home__image-container--chalkboard ">
         <span className="home__chalkboard-text--container">
             <h2>WELCOME TO DAILY BREAD DELIVERY</h2>
           <p className="home__chalkboard-text--content">
@@ -98,7 +98,7 @@ function HomePage() {
           </p>
         </span>
       </div>
-      <div className="home__image-container--bottom">
+      <div className="home__image-container--bottom effects">
         <Slider {...settings}>
           <div className="home__slider-elements">
             <h2>Cowboy Bebop</h2>

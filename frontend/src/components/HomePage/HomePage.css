@@ -103,6 +103,10 @@
   text-align: center;
 }
 
+.home__slider-elements:focus {
+  transform: scale(1.5);
+}
+
 .home__slider-elements h2 {
   margin-bottom: 0px;
   font-size: x-large;
