@@ -68,7 +68,7 @@ function HomePage() {
     return cartObject;
   };
 
-  console.log(cartConverter(cart));
+  
   
   
   const settings = {
@@ -93,8 +93,13 @@ function HomePage() {
   };
 
   const addItem = (e) => {
+    e.preventDefault();
     const productId = e.target.value;
-    // console.log("productId", productId);
+    // console.log("++++++", cartConverter(cart));
+    let localCart = cartConverter(cart);
+    let localString = JSON.stringify(localCart);
+    console.log(localString);
+    localStorage.setItem("localCart", localString);
     dispatch(cartActions.addToCart(productId));
   }
 
