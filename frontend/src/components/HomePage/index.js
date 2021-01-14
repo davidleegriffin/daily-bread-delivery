@@ -50,10 +50,26 @@ function PrevArrow(props) {
 function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const cartQuantity = useSelector(state => state.cart.length);
-  // console.log(cartQuantity);
   // const [isLoaded, setIsLoaded] = useState();
   // const [cart, setCart] = useState([]);
+  const cartQuantity = useSelector(state => state.cart.length);
+  const cart = useSelector(state => state.cart);
+
+  function cartConverter(array) {
+    let cartObject = {};
+    for (let i = 0; i < array.length; i++) {
+      let currentValue = array[i];
+      if (cartObject[currentValue] === undefined) {
+        cartObject[currentValue] = 1;
+      } else {
+        cartObject[currentValue] += 1;
+      }
+    }
+    return cartObject;
+  };
+
+  console.log(cartConverter(cart));
+  
   
   const settings = {
     dots: true,
