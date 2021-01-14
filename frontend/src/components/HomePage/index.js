@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import store from '../../store'
 import * as sessionActions from '../../store/session';
+import * as cartActions from '../../store/cartActions';
 import { useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import './HomePage.css';
@@ -48,8 +50,10 @@ function PrevArrow(props) {
 function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
-  const [isLoaded, setIsLoaded] = useState();
-  const [cart, setCart] = useState([]);
+  const cartQuantity = useSelector(state => state.cart.length);
+  // console.log(cartQuantity);
+  // const [isLoaded, setIsLoaded] = useState();
+  // const [cart, setCart] = useState([]);
   
   const settings = {
     dots: true,
@@ -66,53 +70,17 @@ function HomePage() {
       prevArrow: <PrevArrow />
   };
 
-  const logout = (e) => {
+  const logout = async (e) => {
     e.preventDefault();
+    await dispatch(sessionActions.logout());
     history.push("/");
-    dispatch(sessionActions.logout());
   };
 
-  let localCart = localStorage.getItem("cart");
-
   const addItem = (e) => {
-    console.log("e-target", e.target.value);
-    let item = {};
-    item.id = parseInt(e.target.value);
-    item.quantity = parseInt(document.getElementById(`quantity${item.id}`).value);
-    console.log("item-quantity", item.quantity);
-    let cartCopy = [...cart];
-    console.log("cartCopy", cartCopy);
-    // console.log("localCart", localCart);
-    // let { ID } = item;
-    let existingItem = cartCopy.find(cartItem => console.log(cartItem[0]));
-    if (existingItem) {
-      existingItem.quantity += item.quantity;
-    } else {
-      cartCopy.push(`{id:${item.id},quantity:${item.quantity}}`)
-    }
-    setCart(cartCopy)
-    let stringCart = JSON.stringify(cartCopy);
-    localStorage.setItem("cart", stringCart)
+    const productId = e.target.value;
+    // console.log("productId", productId);
+    dispatch(cartActions.addToCart(productId));
   }
-
-
-  const updateItem = (itemID, amount) => {
-    let cartCopy = [...cart]
-    let existentItem = cartCopy.find(item => item.ID == itemID);
-    if (!existentItem) return;
-    existentItem.quantity += amount;
-    if (existentItem.quantity <= 0) {
-      cartCopy = cartCopy.filter(item => item.ID != itemID)
-    }
-    setCart(cartCopy);
-    let cartString = JSON.stringify(cartCopy);
-    localStorage.setItem("cart", cartString);
-   }
-
-  useEffect(() => {
-    localCart = JSON.parse(localCart);
-    if (localCart) setCart(localCart)
-  }, []);
 
   return (
     <div className="home__main-container">
@@ -123,7 +91,8 @@ function HomePage() {
         </span>
       </div>
       <div className="home__image-container--cart">
-        <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />  
+        <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />
+        <span>{cartQuantity}</span>
       </div>
       <div className="home__button-container--logout">
         <button className="home__logout-button" onClick={logout}>Log Out</button>
@@ -149,7 +118,6 @@ function HomePage() {
             <h2>
               Cowboy Bebop
               <button className="home__addToCart-button" onClick={addItem} value="1">Add to Cart</button>
-              <input type="text" id="quantity1"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -161,7 +129,6 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               <button className="home__addToCart-button" onClick={addItem} value="2">Add to Cart</button>
-              <input type="text" id="quantity2"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -173,7 +140,6 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               <button className="home__addToCart-button" onClick={addItem} value="3">Add to Cart</button>
-              <input type="text" id="quantity3"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -185,7 +151,6 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               <button className="home__addToCart-button" onClick={addItem} value="4">Add to Cart</button>
-              <input type="text" id="quantity4"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -197,7 +162,6 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               <button className="home__addToCart-button" onClick={addItem} value="5">Add to Cart</button>
-              <input type="text" id="quantity5"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -209,7 +173,6 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               <button className="home__addToCart-button" onClick={addItem} value="6">Add to Cart</button>
-              <input type="text" id="quantity6"></input>
             </h2>
             <img
               className="home__image--bottom"
@@ -220,8 +183,8 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-            <button className="home__addToCart-button" onClick={addItem} value="7">Add to Cart</button>
-              <input type="text" id="quantity7"></input>            </h2>
+              <button className="home__addToCart-button" onClick={addItem} value="7">Add to Cart</button>
+            </h2>
             <img
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1534620808146-d33bb39128b2?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
