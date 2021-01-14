@@ -92,15 +92,15 @@ function HomePage() {
     history.push("/");
   };
 
-  const addItem = (e) => {
+  const addItem = async (e) => {
     e.preventDefault();
     const productId = e.target.value;
     // console.log("++++++", cartConverter(cart));
     let localCart = cartConverter(cart);
     let localString = JSON.stringify(localCart);
     console.log(localString);
-    localStorage.setItem("localCart", localString);
-    dispatch(cartActions.addToCart(productId));
+    await localStorage.setItem("localCart", localString);
+    await dispatch(cartActions.addToCart(productId));
   }
 
   return (
