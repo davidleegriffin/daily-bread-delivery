@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../../store'
+import store from '../../store';
+import Cart from '../Cart';
 import * as sessionActions from '../../store/session';
 import * as cartActions from '../../store/cartActions';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import './HomePage.css';
 
@@ -86,6 +87,11 @@ function HomePage() {
       prevArrow: <PrevArrow />
   };
 
+  // const goToCart = async (e) => {
+  //   await console.log("Mic check");
+  //   history.push("/splash");
+  // };
+
   const logout = async (e) => {
     e.preventDefault();
     await dispatch(sessionActions.logout());
@@ -101,7 +107,11 @@ function HomePage() {
     console.log(localString);
     await localStorage.setItem("localCart", localString);
     await dispatch(cartActions.addToCart(productId));
-  }
+  };
+
+  const Cart = React.forwardRef((props, ref) => (
+    <a ref={ref} {...props}>💅 {props.children}</a>
+  ))
 
   return (
     <div className="home__main-container">
@@ -112,8 +122,9 @@ function HomePage() {
         </span>
       </div>
       <div className="home__image-container--cart">
+        <Link to="/order" component={ Cart }>Go To Cart</Link>
         <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />
-        <span>{cartQuantity}</span>
+          <span>{cartQuantity}</span>
       </div>
       <div className="home__button-container--logout">
         <button className="home__logout-button" onClick={logout}>Log Out</button>

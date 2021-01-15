@@ -6,6 +6,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import SplashPage from './components/SplashPage';
 import HomePage from './components/HomePage';
+import Cart from './components/Cart';
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +24,8 @@ function App() {
           <Route path="/login" component={ LoginFormPage }/>
           <Route path="/signup" component={ SignupFormPage } />
           <Route exact path="/" component={ SplashPage } />
-          <Route exact path="/home" component={ HomePage } />
+          <Route exact path="/order" component={ Cart } />
+          <Route exact path="/home" component={HomePage} />
         </Switch>
       )}
     </div>
