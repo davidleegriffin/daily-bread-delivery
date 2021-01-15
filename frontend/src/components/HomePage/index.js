@@ -54,7 +54,7 @@ function HomePage() {
   // const [isLoaded, setIsLoaded] = useState();
   // const [cart, setCart] = useState([]);
   const cartQuantity = useSelector(state => state.cart.length);
-  const cart = useSelector(state => state.cart);
+  let cart = useSelector(state => state.cart);
 
   function cartConverter(array) {
     let cartObject = {};
@@ -109,8 +109,8 @@ function HomePage() {
     await dispatch(cartActions.addToCart(productId));
   };
 
-  const Cart = React.forwardRef((props, ref) => (
-    <a ref={ref} {...props}>💅 {props.children}</a>
+  const Cart = React.forwardRef((cart, ref) => (
+    <a ref={ref} {...cart}>💅 {cart.children}</a>
   ))
 
   return (
