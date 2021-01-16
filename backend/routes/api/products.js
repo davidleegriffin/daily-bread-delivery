@@ -7,13 +7,10 @@ const router = express.Router();
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    const { id } = req.body;
-    console.log("id", id);
-    const products = await Product.findByPk(id);
+    const result = await Product.findAll();
+    const products = await result;
     console.log(products);
-    return res.json({
-      products,
-    });
+    return products;
   }),
 );
 

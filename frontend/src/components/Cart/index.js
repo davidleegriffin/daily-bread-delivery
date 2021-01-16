@@ -14,19 +14,27 @@ function Cart() {
   //   console.log(key);
   // }
 
-  const productsFetch = async () => {
-    const response = await fetch("/api/products");
-    const products = await response.json();
+  // async function productsFetch() {
+  //   const res = await fetch("/api/products");
+  //   const products = await res;
+  //   return products;
+  // }
+
+  const productFetch = async () => {
+    let response = await fetch("/api/products");
+    console.log("products", products);
+    let products = await response.json();
     return products;
   }
 
-  const productFetch = async (id) => {
-    const response = await fetch("/api/products", id);
-    const product = await response.json();
-    return await product;
-  }
+  // const getProducts = async () => {
+  //   const result = await productFetch();
+  //   const rebounce = await result;
+  //   return rebounce;
+  // }
 
-  console.log("fetchResult", productFetch({id: 4}));
+  // const products = productFetch();
+  console.log("productFetch", productFetch());
 
   return (
     <div>
