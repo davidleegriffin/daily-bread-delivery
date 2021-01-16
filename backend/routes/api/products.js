@@ -7,8 +7,9 @@ const router = express.Router();
 router.get(
   '/',
   asyncHandler(async (req, res) => {
-    // const { stockSymbol, shares, userId } = req.body;
-    const products = await Product.findAll();
+    const { id } = req.body;
+    console.log("id", id);
+    const products = await Product.findByPk(id);
     console.log(products);
     return res.json({
       products,

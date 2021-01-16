@@ -104,7 +104,7 @@ function HomePage() {
     // console.log("++++++", cartConverter(cart));
     let localCart = cartConverter(cart);
     let localString = JSON.stringify(localCart);
-    console.log(localString);
+    // console.log(localString);
     await localStorage.setItem("localCart", localString);
     await dispatch(cartActions.addToCart(productId));
   };
