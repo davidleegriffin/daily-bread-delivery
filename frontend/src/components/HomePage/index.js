@@ -4,7 +4,7 @@ import store from '../../store';
 import Cart from '../Cart';
 import * as sessionActions from '../../store/session';
 import * as cartActions from '../../store/cartActions';
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import './HomePage.css';
 
@@ -109,9 +109,9 @@ function HomePage() {
     await dispatch(cartActions.addToCart(productId));
   };
 
-  const Cart = React.forwardRef((cart, ref) => (
-    <a ref={ref} {...cart}>💅 {cart.children}</a>
-  ))
+  // const Cart = React.forwardRef((cart, ref) => (
+  //   <a ref={ref} {...cart}>💅 {cart.children}</a>
+  // ))
 
   return (
     <div className="home__main-container">
@@ -122,7 +122,12 @@ function HomePage() {
         </span>
       </div>
       <div className="home__image-container--cart">
-        <Link to="/order" component={ Cart }>Go To Cart</Link>
+        <NavLink to={{
+          pathname: "/order",
+          homeProps: {
+            name: "cart"
+          }
+        }}>Go To Cart</NavLink>
         <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />
           <span>{cartQuantity}</span>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -12,15 +12,18 @@ function Cart() {
     console.log(key);
   }
 
-  const goHome = async (e) => {
-    await history.push("/home");
-  };
+ 
 
   return (
     <div>
+      <NavLink to={{
+          pathname: "/home",
+          cartProps: {
+            name: "cart"
+          }
+        }}>Go To Home</NavLink>
       <h1>CART</h1>
       <p>{ Object.keys(cart) }</p>
-      <button onClick={goHome}>HOME</button>
     </div>
   )
 }
