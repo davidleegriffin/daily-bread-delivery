@@ -15,15 +15,15 @@ function Cart() {
   // }
 
   // async function productsFetch() {
-  //   const res = await fetch("/api/products");
-  //   const products = await res;
+  //   let response = await fetch("/api/products");
+  //   const products = await res.json()
   //   return products;
   // }
 
   const productFetch = async () => {
     let response = await fetch("/api/products");
-    console.log("products", products);
     let products = await response.json();
+    console.log("++++++++++++++products+++++++++++++++++++", products[0]);
     return products;
   }
 
@@ -34,7 +34,7 @@ function Cart() {
   // }
 
   // const products = productFetch();
-  console.log("productFetch", productFetch());
+  productFetch();
 
   return (
     <div>
