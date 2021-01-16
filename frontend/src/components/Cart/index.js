@@ -12,7 +12,13 @@ function Cart() {
     console.log(key);
   }
 
- 
+  const productsFetch = async () => {
+    const response = await fetch("/api/products");
+    const products = await response.json();
+    return products;
+  }
+
+  console.log(productsFetch());
 
   return (
     <div>
