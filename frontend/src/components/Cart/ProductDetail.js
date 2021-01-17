@@ -1,9 +1,13 @@
-// import './Product.css';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 function ProductDetail(props) {
+  let stateCart = useSelector(state => state.cart);
   const item = props.props;
   const productId = item[0] -1;
   const quantity = item[1];
+  let total;
 
   const products = [
     {
@@ -51,7 +55,57 @@ function ProductDetail(props) {
   ]
   
   const productURL = products[productId].imageURL;
-  // console.log(products[0]);
+  const productPrice = products[productId].price;
+
+  function cartConverter(array) {
+    let cartObject = {};
+    for (let i = 0; i < array.length; i++) {
+      let currentValue = array[i];
+      if (cartObject[currentValue] === undefined) {
+        cartObject[currentValue] = 1;
+      } else {
+        cartObject[currentValue] += 1;
+      }
+    }
+    return cartObject;
+  };
+
+  const currentCart = cartConverter(stateCart);
+
+  console.log(Object.entries(currentCart));
+  
+  // function cartTotal() {
+  //   let subTotal=0;
+  //   let productTotal = (productPrice * quantity);
+  //   subTotal = subTotal + productTotal;
+  //   console.log("prodTTL", productTotal, "sub", subTotal);
+  //   return subTotal;
+  // }
+
+  // console.log("cartTotal", cartTotal());
+  // let test = cartTotal();
+  // total = total + test;
+  // console.log(total);
+
+  // function cartConverter(array) {
+  //   let cartObject = {};
+  //   for (let i = 0; i < array.length; i++) {
+  //     let currentValue = array[i];
+  //     if (cartObject[currentValue] === undefined) {
+  //       cartObject[currentValue] = 1;
+  //     } else {
+  //       cartObject[currentValue] += 1;
+  //     }
+  //   }
+  //   return cartObject;
+  // };
+
+  // const convertedCart = cartConverter(item);
+
+  
+  // console.log("convertedCart", convertedCart);
+
+
 
   return (
     <div className="productDetail__product-wrapper">
@@ -64,8 +118,9 @@ function ProductDetail(props) {
          x
          <span>{quantity} loaves</span>
          =
-        <span>${products[productId].price * quantity}</span>
+        <span>${productPrice}</span>
       </div>
+      {/* <span>{subTotal}</span> */}
     </div>
   )
 }
