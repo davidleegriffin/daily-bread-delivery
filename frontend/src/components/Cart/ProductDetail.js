@@ -2,6 +2,9 @@
 
 function ProductDetail(props) {
   const item = props.props;
+  const productId = item[0] -1;
+  const quantity = item[1];
+
   const products = [
     {
       productName: "Cowboy Bebop",
@@ -47,11 +50,22 @@ function ProductDetail(props) {
     }
   ]
   
-  console.log(products[0]);
+  const productURL = products[productId].imageURL;
+  // console.log(products[0]);
 
   return (
     <div className="productDetail__product-wrapper">
-      ${products[0].price * item[1]}
+      <div>{ products[productId].productName }</div>
+      <div>
+        <img src={`${productURL}`} width="250" alt="product"/>
+      </div>
+      <div>
+        <span>${products[productId].price}</span>
+         x
+         <span>{quantity} loaves</span>
+         =
+        <span>${products[productId].price * quantity}</span>
+      </div>
     </div>
   )
 }
