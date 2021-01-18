@@ -72,52 +72,15 @@ function ProductDetail(props) {
   };
 
   const currentCart = cartConverter(stateCart);
-  // console.log("stateCart", stateCart);
-  // console.log("currentCart", currentCart);
+
   for (let [key, value] of Object.entries(currentCart)) {
-    // console.log(`${key}: ${value}`);
-    // console.log("price", products[key].price);
-    // console.log("quantity", value);
-    // console.log("subtotal", (products[key].price * value));
-    total += (products[key].price * value);
+ 
+    total += (products[key-1].price * value);
   }
-  // console.log("total", total);
-  
-  // function cartTotal() {
-  //   let subTotal=0;
-  //   let productTotal = (productPrice * quantity);
-  //   subTotal = subTotal + productTotal;
-  //   console.log("prodTTL", productTotal, "sub", subTotal);
-  //   return subTotal;
-  // }
-
-  // console.log("cartTotal", cartTotal());
-  // let test = cartTotal();
-  // total = total + test;
-  // console.log(total);
-
-  // function cartConverter(array) {
-  //   let cartObject = {};
-  //   for (let i = 0; i < array.length; i++) {
-  //     let currentValue = array[i];
-  //     if (cartObject[currentValue] === undefined) {
-  //       cartObject[currentValue] = 1;
-  //     } else {
-  //       cartObject[currentValue] += 1;
-  //     }
-  //   }
-  //   return cartObject;
-  // };
-
-  // const convertedCart = cartConverter(item);
-
-  
-  // console.log("convertedCart", convertedCart);
-
-
 
   return (
     <>
+      
       <div className="productDetail__product-wrapper">
         <div>{ products[productId].productName }</div>
         <div>
@@ -130,8 +93,7 @@ function ProductDetail(props) {
           =
           <span>${productPrice * quantity}</span>
         </div>
-    {/* ${total} */}
-    </div>
+      </div>
       
     </>
   )

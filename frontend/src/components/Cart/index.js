@@ -73,7 +73,7 @@ function Cart() {
   const currentCart = cartConverter(stateCart);
 
   for (let [key, value] of Object.entries(currentCart)) {
-    subtotal += (products[key].price * value);
+    subtotal += (products[key-1].price * value);
   }
   let tax = subtotal * .0825;
   let total = subtotal + tax;
@@ -91,20 +91,21 @@ function Cart() {
               name: "cart"
             }
         }}>
-            <button>Go To Home</button>
+            <button className="cart__button--home">Home</button>
         </NavLink>
+        <div className="cart__container--monetary">
+          <div>CART-Subtotal: ${subtotal.toFixed(2)}</div>
+          <div>CART-Tax: ${tax.toFixed(2)}</div>
+          <div>CART-Total: ${total.toFixed(2)}</div>
+          <button>CHECKOUT</button>
+        </div>
       </div>
 
       <div className="cart__container--products">
         {Object.entries(currentCart).map((product, idx) => <ProductDetail key={idx} props={product} />)}
       </div>
 
-      <div className="cart__container--monetary">
-          <h4>CART-Subtotal: ${subtotal}.00</h4>
-          <h4>CART-Tax: ${tax}</h4>
-          <h4>CART-Total: ${total}</h4>
-          <button>CHECKOUT</button>
-      </div>
+      
 
     </div>
   )
