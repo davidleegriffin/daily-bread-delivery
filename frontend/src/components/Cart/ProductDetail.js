@@ -7,7 +7,7 @@ function ProductDetail(props) {
   const item = props.props;
   const productId = item[0] -1;
   const quantity = item[1];
-  let total;
+  let total =0;
 
   const products = [
     {
@@ -71,8 +71,16 @@ function ProductDetail(props) {
   };
 
   const currentCart = cartConverter(stateCart);
-
-  console.log(Object.entries(currentCart));
+  // console.log("stateCart", stateCart);
+  // console.log("currentCart", currentCart);
+  for (let [key, value] of Object.entries(currentCart)) {
+    // console.log(`${key}: ${value}`);
+    // console.log("price", products[key].price);
+    // console.log("quantity", value);
+    // console.log("subtotal", (products[key].price * value));
+    total += (products[key].price * value);
+  }
+  // console.log("total", total);
   
   // function cartTotal() {
   //   let subTotal=0;
@@ -108,20 +116,23 @@ function ProductDetail(props) {
 
 
   return (
-    <div className="productDetail__product-wrapper">
-      <div>{ products[productId].productName }</div>
-      <div>
-        <img src={`${productURL}`} width="250" alt="product"/>
-      </div>
-      <div>
-        <span>${products[productId].price}</span>
-         x
-         <span>{quantity} loaves</span>
-         =
-        <span>${productPrice}</span>
-      </div>
-      {/* <span>{subTotal}</span> */}
+    <>
+      <div className="productDetail__product-wrapper">
+        <div>{ products[productId].productName }</div>
+        <div>
+          <img src={`${productURL}`} width="150" alt="product"/>
+        </div>
+        <div>
+          <span>${products[productId].price}</span>
+          x
+          <span>{quantity} loaves</span>
+          =
+          <span>${productPrice * quantity}</span>
+        </div>
+    {/* ${total} */}
     </div>
+      
+    </>
   )
 }
 
