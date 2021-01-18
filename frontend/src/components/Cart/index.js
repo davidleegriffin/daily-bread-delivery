@@ -90,15 +90,20 @@ function Cart() {
             cartProps: {
               name: "cart"
             }
-        }}>
-            <button className="cart__button--home">Home</button>
+          }}>
+          <button className="cart__button--home">Home</button>
         </NavLink>
         <div className="cart__container--monetary">
-          <div>CART-Subtotal: ${subtotal.toFixed(2)}</div>
-          <div>CART-Tax: ${tax.toFixed(2)}</div>
-          <div>CART-Total: ${total.toFixed(2)}</div>
-          <button>CHECKOUT</button>
+          <div>Subtotal: <span className="cart__money">${subtotal.toFixed(2)}</span></div>
+          <div>Tax: <span className="cart__money">${tax.toFixed(2)}</span></div>
+          <div>Total: <span className="cart__money">${total.toFixed(2)}</span></div>
         </div>
+          <div>
+            <a href="https://davidleegriffin.github.io/" target="_blank">
+              <button className="cart__button--checkout">CHECKOUT</button>
+            </a>
+          </div>
+          
       </div>
 
       <div className="cart__container--products">

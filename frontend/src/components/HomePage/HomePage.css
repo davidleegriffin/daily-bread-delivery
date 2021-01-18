@@ -97,6 +97,11 @@
   width: 95%;
 }
 
+.home__image--bottom {
+  border-radius: 50%;
+  box-shadow: 8px 8px 16px rgba(100,100,100,1);
+}
+
 .home__slider-elements {
   font-family: Indie Flower;
   font-weight: 800;

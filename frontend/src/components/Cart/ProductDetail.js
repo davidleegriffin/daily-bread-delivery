@@ -82,23 +82,29 @@ function ProductDetail(props) {
     <>
       
       <div className="productDetail__product-wrapper">
-        <div>
-          <img src={`${productURL}`} width="150" alt="product"/>
+        <div className="productDetail__product--image">
+          <img className="productDetail__image" src={`${productURL}`} width="150" alt="product"/>
         </div>
         <div className="productDetail__product--name">
           {products[productId].productName}
         </div>
         <div className="productDetail__product--description">
-          {products[productId].description}
+            {products[productId].description}
         </div>
-        <div className="productDetail__product--price">
-          Unit Price: ${products[productId].price}
+        <div className="productDetail__container--money">
+          <div className="productDetail__product--price">
+            Unit Price: $<span className="cart__money">{products[productId].price}</span>
+          </div>
+          <div className="productDetail__product--quantity">
+            Unit Quantities: <span className="cart__money">{quantity}</span>
+          </div>
+          <div className="productDetail__product--subtotal">
+            Subtotal: $<span className="cart__money">{productPrice * quantity}</span>
+          </div>
         </div>
-        <div className="productDetail__product--quantity">
-          Unit Quantities: {quantity}
-        </div>
-        <div className="productDetail__product--subtotal">
-          <span>${productPrice * quantity}</span>
+        <div className="productDetail__container--incrementals">
+          <button className="productDetail__incremental--plus">+</button>
+          <button className="productDetail__incremental--minus">-</button>
         </div>
       </div>
       

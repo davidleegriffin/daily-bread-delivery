@@ -1,19 +1,54 @@
+@font-face {
+  font-family: Indie Flower;
+  src: url("https://fonts.googleapis.com/css2?family=Indie+Flower");
+}
+
 body {
   background: beige;
 }
+
 
 .cart__container--navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 90px;
+  height: 100px;
+}
+
+.cart__money {
+  font-family: sans-serif;
+  font-weight: 500;
+  font-size: large;
 }
 
 .cart__container--monetary {
+  width: fit-content;
+  margin-left: 60%;
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: Indie Flower;
+  font-size:x-large;
+  font-weight: 600;
   margin-right: 50px;  
+}
+
+.cart__button--checkout {
+  background-image: url("https://p.kindpng.com/picc/s/217-2172654_text-box-border-decorative-text-box-borders-transparent.png");
+  background-position: center;
+  background-size: contain;
+  font-family: Indie Flower;
+  font-size: .75rem;
+  font-weight: 900;
+  width: 96px;
+  height: 76px;
+  border-radius: 10px;
+  /* margin-left:  30px; */
+  background-color: transparent;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+  box-shadow: 0px 0px 30px 7px rgba(100, 100, 100, 0.3);
+  outline: 1px solid rgba(100, 100, 100, 0.05);
+  border: none;
 }
 
 .cart__button--home {
@@ -46,40 +81,88 @@ body {
 
 .productDetail__product-wrapper {
   background: rgb(255,255,255);
-  background: linear-gradient(200deg, rgba(255,255,255,1) 33%, rgba(249,249,168,1) 66%);
+  background: linear-gradient(200deg, rgba(255,255,255,1), 33%, rgba(249,249,168,1) 66%);
   display: inline-flex;
-  outline: 1px solid black;
+  border: 1px solid black;
+  border-radius: 15px;
+  box-shadow: 4px 4px 8px rgba(100,100,100,1);
   margin: 20px;
   padding: 20px;
 }
 
+.productDetail__image {
+  border-radius: 50%;
+  box-shadow: 8px 8px 16px rgba(100,100,100,1);
+}
+
+.productDetail__product--image {
+  align-self: center;
+  border: 1px solid  rgba(100,100,100,.1);
+  border-radius: 50%;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+
+}
+
 .productDetail__product--name {
-  width: 100px;
-  margin: 10px;
+  background-color: rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  font-family: Indie Flower;
+  font-size:x-large;
+  font-weight: 900;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+  box-shadow: 4px 4px 8px rgba(100,100,100,1);
+  width: fit-content;
+  margin: 20px;
   padding: 10px;
 }
 
 .productDetail__product--description {
+  font-family: Indie Flower;
+  font-weight: 600;
   width: 200px;
   margin: 10px;
   padding: 10px;
 }
 
-.productDetail__product--price {
-  width: 100px;
-  margin: 10px;
+.productDetail__container--money {
+  align-self:center;
+  font-family: Indie Flower;
+  font-weight: 600;
+  width:fit-content;
   padding: 10px;
+  margin:10px;
+}
+
+.productDetail__product--price {
+  width: 150px;
 }
 
 .productDetail__product--quantity {
   width: 130px;
-  margin: 10px;
-  padding: 10px;
 }
 
 .productDetail__product--subtotal {
-  width: 30px;
-  margin: 10px;
-  padding: 10px;
+  width: 130px;
+}
+
+.productDetail__container--incrementals {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.productDetail__incremental--plus {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.productDetail__incremental--minus {
+  margin: 5px;
+  width: 40px;
+  height: 40px;
 }
 
