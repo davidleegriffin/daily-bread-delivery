@@ -93,6 +93,7 @@ function Cart() {
       <h4>CART-Subtotal: ${subtotal}.00</h4>
       <h4>CART-Tax: ${tax}</h4>
       <h4>CART-Total: ${total}</h4>
+      <button>CHECKOUT</button>
     </div>
   )
 }
