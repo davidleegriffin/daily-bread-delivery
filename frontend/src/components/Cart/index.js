@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import ProductDetail from './ProductDetail';
+import './Cart.css';
 
 
 function Cart() {
@@ -80,20 +81,31 @@ function Cart() {
   
 
   return (
-    <div>
-      <NavLink to={{
-          pathname: "/home",
-          cartProps: {
-            name: "cart"
-          }
-        }}>Go To Home</NavLink>
-      <div>
+    <div className="cart__container--page">
+      <div className="cart__container--navbar">
+        <NavLink
+          className="cart__navbar"
+          to={{
+            pathname: "/home",
+            cartProps: {
+              name: "cart"
+            }
+        }}>
+            <button>Go To Home</button>
+        </NavLink>
+      </div>
+
+      <div className="cart__container--products">
         {Object.entries(currentCart).map((product, idx) => <ProductDetail key={idx} props={product} />)}
       </div>
-      <h4>CART-Subtotal: ${subtotal}.00</h4>
-      <h4>CART-Tax: ${tax}</h4>
-      <h4>CART-Total: ${total}</h4>
-      <button>CHECKOUT</button>
+
+      <div className="cart__container--monetary">
+          <h4>CART-Subtotal: ${subtotal}.00</h4>
+          <h4>CART-Tax: ${tax}</h4>
+          <h4>CART-Total: ${total}</h4>
+          <button>CHECKOUT</button>
+      </div>
+
     </div>
   )
 }

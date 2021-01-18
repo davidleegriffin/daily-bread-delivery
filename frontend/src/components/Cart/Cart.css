@@ -1,0 +1,15 @@
+.cart__container--navbar {
+  height: 75px;
+}
+
+.cart__navbar {
+  text-decoration: none;
+}
+
+.cart__container--products {
+  outline: 1px solid black;
+}
+
+.cart__container--monetary {
+  margin-top: 100px;
+}
