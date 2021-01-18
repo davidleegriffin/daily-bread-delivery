@@ -8,7 +8,7 @@ function Cart() {
   const rawCart = localStorage.getItem("localCart");
   const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
-  let total =0;
+  let subtotal = 0;
   
   const products = [
     {
@@ -70,16 +70,13 @@ function Cart() {
   };
 
   const currentCart = cartConverter(stateCart);
-  console.log("stateCart", stateCart);
-  console.log("currentCart", currentCart);
+
   for (let [key, value] of Object.entries(currentCart)) {
-    console.log(`${key}: ${value}`);
-    console.log("price", products[key].price);
-    console.log("quantity", value);
-    console.log("subtotal", (products[key].price * value));
-    total += (products[key].price * value);
+    subtotal += (products[key].price * value);
   }
-  console.log("total", total);
+  let tax = subtotal * .0825;
+  let total = subtotal + tax;
+
   
 
   return (
@@ -90,8 +87,12 @@ function Cart() {
             name: "cart"
           }
         }}>Go To Home</NavLink>
-      <div>{Object.entries(currentCart).map((product, idx) => <ProductDetail key={idx} props={product} />)}</div>
-      <h1>CART SUBTOTAL: ${total}</h1>
+      <div>
+        {Object.entries(currentCart).map((product, idx) => <ProductDetail key={idx} props={product} />)}
+      </div>
+      <h4>CART-Subtotal: ${subtotal}.00</h4>
+      <h4>CART-Tax: ${tax}</h4>
+      <h4>CART-Total: ${total}</h4>
     </div>
   )
 }
