@@ -82,15 +82,22 @@ function ProductDetail(props) {
     <>
       
       <div className="productDetail__product-wrapper">
-        <div>{ products[productId].productName }</div>
         <div>
           <img src={`${productURL}`} width="150" alt="product"/>
         </div>
-        <div>
-          <span>${products[productId].price}</span>
-          x
-          <span>{quantity} loaves</span>
-          =
+        <div className="productDetail__product--name">
+          {products[productId].productName}
+        </div>
+        <div className="productDetail__product--description">
+          {products[productId].description}
+        </div>
+        <div className="productDetail__product--price">
+          Unit Price: ${products[productId].price}
+        </div>
+        <div className="productDetail__product--quantity">
+          Unit Quantities: {quantity}
+        </div>
+        <div className="productDetail__product--subtotal">
           <span>${productPrice * quantity}</span>
         </div>
       </div>

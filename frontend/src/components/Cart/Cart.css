@@ -45,6 +45,41 @@ body {
 }
 
 .productDetail__product-wrapper {
+  background: rgb(255,255,255);
+  background: linear-gradient(200deg, rgba(255,255,255,1) 33%, rgba(249,249,168,1) 66%);
+  display: inline-flex;
   outline: 1px solid black;
   margin: 20px;
+  padding: 20px;
 }
+
+.productDetail__product--name {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.productDetail__product--description {
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.productDetail__product--price {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.productDetail__product--quantity {
+  width: 130px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.productDetail__product--subtotal {
+  width: 30px;
+  margin: 10px;
+  padding: 10px;
+}
+
