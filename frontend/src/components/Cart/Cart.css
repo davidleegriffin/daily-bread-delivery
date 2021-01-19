@@ -75,8 +75,10 @@ body {
 
 .cart__container--products {
   height: 100maxvh;
-  /* background: rgb(255,255,255); */
-  /* background: linear-gradient(180deg, rgba(255,255,255,1) 41%, rgba(231,199,12,1) 87%); */
+}
+
+.productDetail__product-wrapper:hover {
+  animation: productanime 1s;
 }
 
 .productDetail__product-wrapper {
@@ -166,3 +168,17 @@ body {
   height: 40px;
 }
 
+@keyframes productanime {
+  0% {
+    transform: translate(0px, 0px);
+    /* box-shadow: 0px 0px 0px 0px rgba(100,100,100,1); */
+  }
+
+  50% {
+    transform: translate(-10px, -20px);
+    box-shadow: 10px 20px 20px rgba(100,100,100,1);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
