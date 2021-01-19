@@ -19,7 +19,8 @@ function NextArrow(props) {
               background: "rgba(0,0,0,0.75)",
               borderRadius: "50%",
               border: "1px solid black",
-              marginRight: "10%",
+              marginRight: "25%",
+              marginTop: "-20%",
               boxShadow: "0px 0px 25px 20px rgba(230, 230, 4, 0.5)"
             }}
       onClick={onClick}
@@ -39,7 +40,8 @@ function PrevArrow(props) {
               borderRadius: "50%",
               border: "1px solid black",
               size: "50px",
-              marginLeft: "13%",
+              marginLeft: "25%",
+              marginTop: "-20%",
               boxShadow: "0px 0px 25px 20px rgba(230, 230, 4, 0.5)",
               zIndex: "2"
       }}
@@ -122,14 +124,18 @@ function HomePage() {
         </span>
       </div>
       <div className="home__image-container--cart">
-        <NavLink to={{
-          pathname: "/order",
-          homeProps: {
-            name: "cart"
-          }
-        }}>Go To Cart</NavLink>
-        <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />
-          <span>{cartQuantity}</span>
+        <div className="home__container-image">
+            <span className="home__button-cart--text">Go to Cart</span> 
+            <NavLink to={{
+              pathname: "/order",
+              homeProps: {
+                name: "cart"
+              }
+            }}>
+              <img src="./images/shopping-cart.png" alt="shopping cart" width="60px" height="60px" />
+            </NavLink>
+        </div>
+          <span className="home__cart--quantity">{cartQuantity}</span>
       </div>
       <div className="home__button-container--logout">
         <button className="home__logout-button" onClick={logout}>Log Out</button>
@@ -154,7 +160,10 @@ function HomePage() {
           <div className="home__slider-elements">
             <h2>
               Cowboy Bebop
-              <button className="home__addToCart-button" onClick={addItem} value="1">Add to Cart</button>
+              <button className="home__addToCart-button" onClick={addItem} value="1">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -165,7 +174,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="2">Add to Cart</button>
+              Karem's French Boule
+              <button className="home__addToCart-button" onClick={addItem} value="2">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -176,7 +189,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="3">Add to Cart</button>
+              Farmhouse Wheat
+              <button className="home__addToCart-button" onClick={addItem} value="3">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -187,7 +204,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="4">Add to Cart</button>
+              Smoked Bread
+              <button className="home__addToCart-button" onClick={addItem} value="4">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -198,7 +219,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="5">Add to Cart</button>
+              Rustic Italian/Ciabatta
+              <button className="home__addToCart-button" onClick={addItem} value="5">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -209,7 +234,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="6">Add to Cart</button>
+              Irish Soda Bread
+              <button className="home__addToCart-button" onClick={addItem} value="6">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
@@ -220,7 +249,11 @@ function HomePage() {
           </div>
           <div className="home__slider-elements">
             <h2>
-              <button className="home__addToCart-button" onClick={addItem} value="7">Add to Cart</button>
+              Rye Campaigne
+              <button className="home__addToCart-button" onClick={addItem} value="7">
+                <img src="./images/shopping-cart.png" className="home__image--add" alt="shopping cart" width="30px" height="30px" />
+                <span className="home__button-text">Add to Cart</span>
+              </button>
             </h2>
             <img
               className="home__image--bottom"
