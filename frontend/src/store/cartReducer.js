@@ -13,6 +13,8 @@ const cartReducer = (state = [], action) => {
       newState = Array.from(state);
       newState.push(action.productId);
       return newState;
+    // case REMOVE_FROM_CART:
+    //   newState = 
     default:
       return state;
   }

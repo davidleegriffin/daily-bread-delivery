@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import * as cartActions from '../../store/cartActions';
 import './Cart.css';
 
 
@@ -8,6 +9,7 @@ function ProductDetail(props) {
   const item = props.props;
   const productId = item[0] -1;
   const quantity = item[1];
+  const dispatch = useDispatch();
   let total =0;
 
   const products = [
@@ -58,6 +60,7 @@ function ProductDetail(props) {
   const productURL = products[productId].imageURL;
   const productPrice = products[productId].price;
 
+  
   function cartConverter(array) {
     let cartObject = {};
     for (let i = 0; i < array.length; i++) {
@@ -70,11 +73,23 @@ function ProductDetail(props) {
     }
     return cartObject;
   };
-
+  
   const currentCart = cartConverter(stateCart);
+  console.log("currentCart", currentCart)
+  
+  const cartPlus = async () => {
+    // console.log("plus-button", props.props[0]);
+    // currentCart[props.props[0]] += 1;
+    await dispatch(cartActions.addToCart(props.props[0]));
+  }
+
+  const cartMinus = async () => {
+    console.log("minus-button", props.props[0]);
+    // currentCart[props.props[0]] += 1;
+    // await dispatch(cartActions.addToCart(props.props[0]));
+  }
 
   for (let [key, value] of Object.entries(currentCart)) {
- 
     total += (products[key-1].price * value);
   }
 
@@ -103,8 +118,8 @@ function ProductDetail(props) {
           </div>
         </div>
         <div className="productDetail__container--incrementals">
-          <button className="productDetail__incremental--plus">+</button>
-          <button className="productDetail__incremental--minus">-</button>
+          <button className="productDetail__incremental--plus" onClick={cartPlus}>+</button>
+          <button className="productDetail__incremental--minus" onClick={cartMinus}>-</button>
         </div>
       </div>
       
