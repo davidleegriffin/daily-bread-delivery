@@ -62,87 +62,104 @@ function SignupFormPage() {
       <div className="signup__form-container effects">
         <form onSubmit={handleSubmit} id="signupForm">
           <div className="form-signup__wrapper">
-          <label className="signup__input-label">
-            Email
-          </label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          <label className="signup__input-label">
-            Password
-          </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="signup__input-fields"
-          />
-          <label className="signup__input-label">
-            Confirm Password
-            <input
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          </label>
-          <label className="signup__input-label">
-            Address
-          </label>
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          <label className="signup__input-label">
-            City
-            <input
-              type="text"
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          </label> 
-          <label className="signup__input-label">
-            State
-            <input
-              type="text"
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          </label> 
-          <label className="signup__input-label">
-            Zip Code
-            <input
-              type="integer"
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-              required
-              className="signup__input-fields"
-            />
-          </label> 
-          <label className="signup__input-label">
-            Avatar/Picture
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Email
+              </label>
+              <input
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Password
+              </label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Address
+              </label>
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                City
+              </label> 
+              <input
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                State
+              </label> 
+              <input
+                type="text"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Zip Code
+              </label> 
+              <input
+                type="integer"
+                value={zip}
+                onChange={(e) => setZip(e.target.value)}
+                required
+                className="signup__input-fields"
+              />
+            </div>
+            <div className="form-signup__wrapper--input">
+              <label className="signup__input-label">
+                Avatar/Picture
+              </label>
             <input
               type="text"
               value={avatar}
               onChange={(e) => setAvatar(e.target.value)}
               className="signup__input-fields"
-            />
-          </label>
-          <label className="signup__input-label--baker">
-            Are You a Baker?
+              />
+            </div>
+            <label className="signup__input-label--baker">
+              Are You a Baker?
+            </label>  
             <input
               type="radio"
               value={baker}
@@ -150,7 +167,6 @@ function SignupFormPage() {
               required
               className="signup__input-fields--baker"
             />yes
-          </label>  
           <button className="signup__submit-button" type="submit">Sign Up</button>
           </div>
         </form>
