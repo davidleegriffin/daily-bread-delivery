@@ -18,7 +18,7 @@
 
 # Backend
 
-- Uses express/sequelize (todo: add screen shots and paragraph)
+- Uses express/sequelize to route API calls to proper action and return correct data. (todo: add screen shots and paragraph)
 
 
 # Components
