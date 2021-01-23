@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
+import * as cartActions from '../../store/cartActions';
 import ProductDetail from './ProductDetail';
 import './Cart.css';
 
 
 function Cart() {
+  const dispatch = useDispatch();
   const rawCart = localStorage.getItem("localCart");
   const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
@@ -74,15 +76,15 @@ function Cart() {
   const currentCart = cartConverter(stateCart);
   console.log("currentCart", currentCart);
 
-  // for (let [key, value] of Object.entries(currentCart)) {
-  //   subtotal += (products[key-1].price * value);
-  // }
-  // let tax = subtotal * .0825;
-  // let total = subtotal + tax;
-  let tax = 1;
-  let total = 10;
+  for (let [key, value] of Object.entries(currentCart)) {
+    subtotal += (products[key-1].price * value);
+  }
+  let tax = subtotal * .0825;
+  let total = subtotal + tax;
 
-  
+  const emptyCart = async () => {
+    await dispatch(cartActions.emptyCart());
+  }
 
   return (
     <div className="cart__container--page">
@@ -102,6 +104,7 @@ function Cart() {
           <div>Tax: <span className="cart__money">${tax.toFixed(2)}</span></div>
           <div>Total: <span className="cart__money">${total.toFixed(2)}</span></div>
         </div>
+        <button className="cart__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
           <div>
             <a href="https://davidleegriffin.github.io/" target="_blank">
               <button className="cart__button--checkout">CHECKOUT</button>

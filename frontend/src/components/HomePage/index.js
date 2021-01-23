@@ -104,16 +104,16 @@ function HomePage() {
     e.preventDefault();
     const productId = e.target.value;
     // console.log("++++++", e.target.value);
-    let localCart = cartConverter(cart);
-    let localString = JSON.stringify(localCart);
+    // let localCart = cartConverter(cart);
+    // let localString = JSON.stringify(localCart);
     // console.log(localString);
-    await localStorage.setItem("localCart", localString);
+    // await localStorage.setItem("localCart", localString);
     await dispatch(cartActions.addToCart(productId));
   };
 
-  // const Cart = React.forwardRef((cart, ref) => (
-  //   <a ref={ref} {...cart}>💅 {cart.children}</a>
-  // ))
+  const emptyCart = async () => {
+    await dispatch(cartActions.emptyCart());
+  }
 
   return (
     <div className="home__main-container">
@@ -136,6 +136,7 @@ function HomePage() {
             </NavLink>
         </div>
           <span className="home__cart--quantity">{cartQuantity}</span>
+          <button className="home__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
       </div>
       <div className="home__button-container--logout">
         <button className="home__logout-button" onClick={logout}>Log Out</button>

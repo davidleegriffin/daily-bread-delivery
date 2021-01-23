@@ -84,13 +84,13 @@ function ProductDetail(props) {
   }
 
   const cartMinus = async () => {
-    console.log("minus-button", props.props[0]);
-    console.log("cart", stateCart);
+    // console.log("minus-button", props.props[0]);
+    // console.log("cart", stateCart);
     for (let item of stateCart) {
       if (props.props[0] == item) {
-        console.log("item", (item));
+        // console.log("item", (item));
         let idx = stateCart.indexOf(item);
-        console.log("item index", stateCart.indexOf(item));
+        // console.log("item index", stateCart.indexOf(item));
         let minusCart = stateCart.splice(idx, 1);
         await dispatch(cartActions.subtractQuantity(stateCart));
         break;
