@@ -80,13 +80,24 @@ function ProductDetail(props) {
   const cartPlus = async () => {
     // console.log("plus-button", props.props[0]);
     // currentCart[props.props[0]] += 1;
-    await dispatch(cartActions.addToCart(props.props[0]));
+    await dispatch(cartActions.addQuantity(props.props[0]));
   }
 
   const cartMinus = async () => {
     console.log("minus-button", props.props[0]);
-    // currentCart[props.props[0]] += 1;
-    // await dispatch(cartActions.addToCart(props.props[0]));
+    console.log("cart", stateCart);
+    for (let item of stateCart) {
+      if (props.props[0] == item) {
+        console.log("item", (item));
+        let idx = stateCart.indexOf(item);
+        console.log("item index", stateCart.indexOf(item));
+        let minusCart = stateCart.splice(idx, 1);
+        await dispatch(cartActions.subtractQuantity(stateCart));
+        break;
+      }
+      console.log("altered-cart", stateCart);
+    };
+    // console.log("test", test);
   }
 
   for (let [key, value] of Object.entries(currentCart)) {

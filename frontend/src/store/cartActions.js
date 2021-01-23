@@ -4,11 +4,10 @@ export const ADD_QUANTITY = 'ADD_QUANTITY';
 export const SUB_QUANTITY = 'SUB_QUANTITY';
 export const EMPTY_CART = 'EMPTY_CART';
 
-export const addToCart = (productId, quantity) => {
+export const addToCart = (productId) => {
   return {
     type: ADD_TO_CART,
     productId,
-    quantity,
   };
 };
 export const removeFromCart = id => {
@@ -23,10 +22,10 @@ export const subtractQuantity = id => {
     id,
   };
 };
-export const addQuantity = id => {
+export const addQuantity = (productId) => {
   return {
     type: ADD_QUANTITY,
-    id,
+    productId,
   };
 };
 export const emptyCart = () => {

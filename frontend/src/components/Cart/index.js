@@ -74,11 +74,13 @@ function Cart() {
   const currentCart = cartConverter(stateCart);
   console.log("currentCart", currentCart);
 
-  for (let [key, value] of Object.entries(currentCart)) {
-    subtotal += (products[key-1].price * value);
-  }
-  let tax = subtotal * .0825;
-  let total = subtotal + tax;
+  // for (let [key, value] of Object.entries(currentCart)) {
+  //   subtotal += (products[key-1].price * value);
+  // }
+  // let tax = subtotal * .0825;
+  // let total = subtotal + tax;
+  let tax = 1;
+  let total = 10;
 
   
 
