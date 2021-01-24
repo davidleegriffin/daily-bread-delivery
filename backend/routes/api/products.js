@@ -9,8 +9,10 @@ router.get(
   asyncHandler(async (req, res) => {
     const result = await Product.findAll();
     const products = await result;
-    console.log(products);
-    return products;
+    // console.log("++++++++++++++++++++++++++++", products[0].dataValues);
+    products.forEach(product => console.log("+++++++++++++++++++++++", product.dataValues));
+    
+    res.send(products);
   }),
 );
 
