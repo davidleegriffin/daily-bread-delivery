@@ -71,9 +71,9 @@ function HomePage() {
     return cartObject;
   };
 
-  
-  
-  
+
+
+
   const settings = {
     dots: true,
       lazyLoad: true,
@@ -125,7 +125,7 @@ function HomePage() {
       </div>
       <div className="home__image-container--cart">
         <div className="home__container-image">
-            <span className="home__button-cart--text">Go to Cart</span> 
+            <span className="home__button-cart--text">Go to Cart</span>
             <NavLink to={{
               pathname: "/order",
               homeProps: {
@@ -136,21 +136,25 @@ function HomePage() {
             </NavLink>
         </div>
           <span className="home__cart--quantity">{cartQuantity}</span>
-          <button className="home__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
+          <div className="home__container--emptyCart">
+          <span className="home__text--emptyCart">Empty Cart</span>
+          <button className="home__button--emptyCart" onClick={ emptyCart }></button>
+          </div>
+
       </div>
       <div className="home__button-container--logout">
         <button className="home__logout-button" onClick={logout}>Log Out</button>
       </div>
-  
+
       <div className="home__image-container--chalkboard ">
         <span className="home__chalkboard-text--container">
             <h2>WELCOME TO DAILY BREAD DELIVERY</h2>
           <p className="home__chalkboard-text--content">
-            We bake bread daily from scratch in the morning and 
+            We bake bread daily from scratch in the morning and
             deliver same day to your door
           </p>
           <p>
-            Choose from any of our fine breads below, and 
+            Choose from any of our fine breads below, and
             select to add to cart, checkout, and if before 9pm,
             delivery will be next day
           </p>

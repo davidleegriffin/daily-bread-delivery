@@ -12,7 +12,7 @@ function Cart() {
   const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
   let subtotal = 0;
-  
+
   const products = [
     {
       productName: "Cowboy Bebop",
@@ -57,7 +57,7 @@ function Cart() {
       imageURL: "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-			    1.2.1&auto=format&fit=crop&w=500&q=60",
     }
   ]
-  
+
 
   function cartConverter(array) {
     let cartObject = {};
@@ -99,25 +99,27 @@ function Cart() {
           }}>
           <button className="cart__button--home">Home</button>
         </NavLink>
+        <div>
+        <button className="cart__button--emptyCart" onClick={ emptyCart }></button>
+        </div>
         <div className="cart__container--monetary">
           <div>Subtotal: <span className="cart__money">${subtotal.toFixed(2)}</span></div>
           <div>Tax: <span className="cart__money">${tax.toFixed(2)}</span></div>
           <div>Total: <span className="cart__money">${total.toFixed(2)}</span></div>
         </div>
-        <button className="cart__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
-          <div>
-            <a href="https://davidleegriffin.github.io/" target="_blank">
-              <button className="cart__button--checkout">CHECKOUT</button>
-            </a>
-          </div>
-          
+        <div>
+          <a href="https://davidleegriffin.github.io/" target="_blank">
+            <button className="cart__button--checkout">CHECKOUT</button>
+          </a>
+        </div>
+
       </div>
 
       <div className="cart__container--products">
         {Object.entries(currentCart).map((product, idx) => <ProductDetail key={idx} props={product} />)}
       </div>
 
-      
+
 
     </div>
   )
