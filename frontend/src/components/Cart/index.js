@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import * as cartActions from '../../store/cartActions';
@@ -8,9 +8,9 @@ import './Cart.css';
 
 function Cart() {
   const dispatch = useDispatch();
-  const [products, setProducts] = useState();
-  const rawCart = localStorage.getItem("localCart");
-  const localCart = JSON.parse(rawCart);
+  // const [products, setProducts] = useState();
+  // const rawCart = localStorage.getItem("localCart");
+  // const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
   let subtotal = 0;
   
@@ -86,9 +86,9 @@ function Cart() {
     return cartObject;
   };
 
-  console.log("stateCart", stateCart)
+  // console.log("stateCart", stateCart)
   const currentCart = cartConverter(stateCart);
-  console.log("currentCart", currentCart);
+  // console.log("currentCart", currentCart);
 
   for (let [key, value] of Object.entries(currentCart)) {
     subtotal += (cartProducts[key-1].price * value);
@@ -122,7 +122,7 @@ function Cart() {
           <div>Total: <span className="cart__money">${total.toFixed(2)}</span></div>
         </div>
         <div>
-          <a href="https://davidleegriffin.github.io/" target="_blank">
+          <a href="https://davidleegriffin.github.io/" target="_blank" rel="noreferrer">
             <button className="cart__button--checkout">CHECKOUT</button>
           </a>
         </div>

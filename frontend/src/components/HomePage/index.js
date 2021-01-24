@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../../store';
-import Cart from '../Cart';
+// import store from '../../store';
+// import Cart from '../Cart';
 import * as sessionActions from '../../store/session';
 import * as cartActions from '../../store/cartActions';
-import { NavLink, Link, useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import Slider from "react-slick";
 import './HomePage.css';
 
@@ -56,20 +56,20 @@ function HomePage() {
   // const [isLoaded, setIsLoaded] = useState();
   // const [cart, setCart] = useState([]);
   const cartQuantity = useSelector(state => state.cart.length);
-  let cart = useSelector(state => state.cart);
+  // let cart = useSelector(state => state.cart);
 
-  function cartConverter(array) {
-    let cartObject = {};
-    for (let i = 0; i < array.length; i++) {
-      let currentValue = array[i];
-      if (cartObject[currentValue] === undefined) {
-        cartObject[currentValue] = 1;
-      } else {
-        cartObject[currentValue] += 1;
-      }
-    }
-    return cartObject;
-  };
+  // function cartConverter(array) {
+  //   let cartObject = {};
+  //   for (let i = 0; i < array.length; i++) {
+  //     let currentValue = array[i];
+  //     if (cartObject[currentValue] === undefined) {
+  //       cartObject[currentValue] = 1;
+  //     } else {
+  //       cartObject[currentValue] += 1;
+  //     }
+  //   }
+  //   return cartObject;
+  // };
 
 
 

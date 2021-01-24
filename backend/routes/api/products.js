@@ -10,7 +10,7 @@ router.get(
     const result = await Product.findAll();
     const products = await result;
     // console.log("++++++++++++++++++++++++++++", products[0].dataValues);
-    products.forEach(product => console.log("+++++++++++++++++++++++", product.dataValues));
+    // products.forEach(product => console.log("+++++++++++++++++++++++", product.dataValues));
     
     res.send(products);
   }),
