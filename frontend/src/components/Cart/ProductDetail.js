@@ -10,7 +10,7 @@ function ProductDetail(props) {
   const productId = item[0] -1;
   const quantity = item[1];
   const dispatch = useDispatch();
-  let total =0;
+  // let total =0;
 
   const products = [
     {
@@ -61,18 +61,18 @@ function ProductDetail(props) {
   const productPrice = products[productId].price;
 
   
-  function cartConverter(array) {
-    let cartObject = {};
-    for (let i = 0; i < array.length; i++) {
-      let currentValue = array[i];
-      if (cartObject[currentValue] === undefined) {
-        cartObject[currentValue] = 1;
-      } else {
-        cartObject[currentValue] += 1;
-      }
-    }
-    return cartObject;
-  };
+  // function cartConverter(array) {
+  //   let cartObject = {};
+  //   for (let i = 0; i < array.length; i++) {
+  //     let currentValue = array[i];
+  //     if (cartObject[currentValue] === undefined) {
+  //       cartObject[currentValue] = 1;
+  //     } else {
+  //       cartObject[currentValue] += 1;
+  //     }
+  //   }
+  //   return cartObject;
+  // };
   
   // const currentCart = cartConverter(stateCart);
   // console.log("currentCart", currentCart);
