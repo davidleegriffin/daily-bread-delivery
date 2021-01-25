@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {  useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import store from '../../store';
 // import Cart from '../Cart';
@@ -54,7 +54,7 @@ function HomePage() {
   const dispatch = useDispatch();
   const history = useHistory();
   // const [isLoaded, setIsLoaded] = useState();
-  // const [cart, setCart] = useState([]);
+  const [products, setProducts] = useState([]);
   const cartQuantity = useSelector(state => state.cart.length);
   // let cart = useSelector(state => state.cart);
 
@@ -89,10 +89,13 @@ function HomePage() {
       prevArrow: <PrevArrow />
   };
 
-  // const goToCart = async (e) => {
-  //   await console.log("Mic check");
-  //   history.push("/splash");
-  // };
+
+    // const getMainProducts = async (dispatch) => {
+    //   await dispatch(cartActions.getProducts());
+    // };
+
+    
+
 
   const logout = async (e) => {
     e.preventDefault();

@@ -3,12 +3,24 @@ import {
   // REMOVE_FROM_CART,
   ADD_QUANTITY,
   SUB_QUANTITY,
-  EMPTY_CART
+  EMPTY_CART,
+  GET_PRODUCTS,
 } from './cartActions';
+import React, {  useEffect, useState } from 'react';
+
+export const getProducts = () => async (dispatch) => {
+  const [products, setProducts] = useState([]);
+  const res = await fetch ('api/products');
+  dispatch(setProducts(res));
+  return res;
+}
 
 const cartReducer = (state = [], action) => {
   let newState;
   switch (action.type) {
+    case GET_PRODUCTS:
+      newState = Object.assign({}, action.products);
+      return newState;
     case ADD_TO_CART:
       newState = Array.from(state);
       newState.push(action.productId);
