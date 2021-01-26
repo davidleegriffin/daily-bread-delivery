@@ -8,13 +8,16 @@
   src: url("https://fonts.googleapis.com/css2?family=Indie+Flower");
 }
 
+
 .home__main-container {
   width: 100maxvh;
   height: 100vh;
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 10% 80% 10%;
-  background-color: beige;
+  background-color: transparent;
+  margin: none;
+  box-sizing: border-box;
 }
 
 .home__text-container--banner {

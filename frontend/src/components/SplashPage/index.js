@@ -30,9 +30,12 @@ function SplashPage() {
       </div>
       <img className="splash__image--background" alt="background-splash" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" ></img>
       <div className="splash__main-intro effects">
+        <span className="splash__intro-text--banner"><h2>WELCOME!</h2></span>
         <span className="splash__intro-text">
-          lorem cuchucha macho labrador del puny los muttonaise jolta
-          como hacer tu bien almost done with this project
+          Daily Bread Delivery is the fresh new concept in Artisinal bread. 
+          Baked fresh daily by a human using human-friendly ingredients, 
+          then delivered to your door that day so it's freshness can be 
+          enjoyed to the fullest.
         </span>
       </div>
       <div className="splash__button-container--right">

@@ -3,38 +3,90 @@
   src: url("https://fonts.googleapis.com/css2?family=Indie+Flower");
 }
 
+body {
+  background: white;
+  background: radial-gradient(circle, rgba(236, 235, 148, 0.76) 50%, rgba(255,255,255,1) 85%);
+
+}
+
 .splash__main-container {
   width: 100%;
   height: 500px;
   display: grid;
   grid-template-columns: 20% 60% 20%;
   grid-template-rows: 15% 70% 15%;
+ 
 }
 
 .splash__image--background {
-  grid-column-start: 2;
-  grid-row-start: 2;
+  margin-left: 112%;
+  margin-top: 30%;
+  border-radius: 25px;
+
+  /* grid-column-start: 2;
+  grid-row-start: 2; */
 }
 
 .splash__main-intro {
   position:relative;
   grid-column-start: 2;
   grid-row-start: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(255, 255, 255, 0.7);
-  width: 400px;
-  height: 150px;
+  width: 420px;
+  height: 180px;
   margin-left: 175px;
   margin-top: 250px;
   border-radius: 15px;
+  animation: scale-up 10s;
+  animation-delay: 1s;
+  animation-timing-function: ease-in;
+}
+
+.splash__main-intro:hover {
+  transform: scale(1.5);
+  background-color: white;
+}
+
+@keyframes scale-up {
+  0% {
+    transform: scale(1);
+  }
+  3% {
+    transform: scale(-1);
+  }
+  6% {
+    transform: scale(1.5);
+  }
+  94% {
+      transform: scale(1.5);
+  }
+  97% {
+    transform: scale(-1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.splash__intro-text--banner {
+  margin: 10px;
+  font-family: Indie Flower;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-shadow: 0px 0px 4px rgba(250, 250, 4, 0.8);
+
 }
 
 .splash__intro-text {
   font-family: Indie Flower;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   font-weight: 700;
   width: 300px;
   display: flex;
-  margin-left: 2.5em;
+  margin-right: 1.5em;
   margin-top: 1em;
 }
 
