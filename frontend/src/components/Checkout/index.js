@@ -6,6 +6,8 @@ import './Checkout.css';
 
 function Checkout() {
   let stateCart = useSelector(state => state.cart);
+  let sortedCart = stateCart.sort();
+  console.log("sortedCart", sortedCart);
   let products = [];
 
   useEffect(() => {
@@ -40,19 +42,19 @@ function Checkout() {
       <h1>Checkout</h1>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
-          <span className="checkout__check">{stateCart[0]}</span>
-          <span className="checkout__check">{stateCart[1]}</span>
-          <span className="checkout__check">{stateCart[2]}</span>
-          <span className="checkout__check">{stateCart[3]}</span>
-          <span className="checkout__check">{stateCart[4]}</span>
-          <span className="checkout__check">{stateCart[5]}</span>
-          <span className="checkout__check">{stateCart[6]}</span>
-          <span className="checkout__check">{stateCart[7]}</span>
-          <span className="checkout__check">{stateCart[8]}</span>
-          <span className="checkout__check">{stateCart[9]}</span>
-          <span className="checkout__check">{stateCart[10]}</span>
-          <span className="checkout__check">{stateCart[11]}</span>
-          <span className="checkout__check">{stateCart[12]}</span>
+          <span className="checkout__check">{localStorage.getItem(`${sortedCart[0]}`)}</span>
+          <span className="checkout__check">{sortedCart[1]}</span>
+          <span className="checkout__check">{sortedCart[2]}</span>
+          <span className="checkout__check">{sortedCart[3]}</span>
+          <span className="checkout__check">{sortedCart[4]}</span>
+          <span className="checkout__check">{sortedCart[5]}</span>
+          <span className="checkout__check">{sortedCart[6]}</span>
+          <span className="checkout__check">{sortedCart[7]}</span>
+          <span className="checkout__check">{sortedCart[8]}</span>
+          <span className="checkout__check">{sortedCart[9]}</span>
+          <span className="checkout__check">{sortedCart[10]}</span>
+          <span className="checkout__check">{sortedCart[11]}</span>
+          <span className="checkout__check">{sortedCart[12]}</span>
 
         </div>
         <img src="./images/guest-check.png"></img>

@@ -6,14 +6,14 @@ import {
   EMPTY_CART,
   GET_PRODUCTS,
 } from './cartActions';
-import React, {  useEffect, useState } from 'react';
 
-export const getProducts = () => async (dispatch) => {
-  const [products, setProducts] = useState([]);
-  const res = await fetch ('api/products');
-  dispatch(setProducts(res));
-  return res;
-}
+
+// export const getProducts = () => async (dispatch) => {
+//   const [products, setProducts] = useState([]);
+//   const res = await fetch ('api/products');
+//   dispatch(setProducts(res));
+//   return res;
+// }
 
 const cartReducer = (state = [], action) => {
   let newState;
