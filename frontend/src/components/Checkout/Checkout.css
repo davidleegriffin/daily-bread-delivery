@@ -105,8 +105,8 @@
  position: absolute;
  display: flex;
  width: 500px;
- top: -75px;
- left: 13%;
+ top: 0px;
+ left: 23%;
  background-color: transparent;
  z-index: -1;
 }
@@ -114,11 +114,58 @@
 .checkout__check-text {
   position: absolute;
   display: flex;
+  flex-direction: column;
   background-color: transparent;
-  top: 270px;
-  left: 70%;
+  top: 23%;
+  left: 10%;
   width: 400px;
   height: 551px;
   color: black;
   z-index: 0;
+}
+
+.checkout__check-text span {
+  margin: 2.4%;
+}
+
+.checkout__container--credit {
+  position: relative;
+
+}
+
+
+.checkout__form-container--credit {
+  position: absolute;
+  top: 97px;
+  left: 20px;
+  width: 14%;
+}
+
+.checkout__credit-input--cardNum {
+  margin-top: -8px;
+  width: 120%;
+  height: 15px;
+}
+
+.checkout__credit-subContainer {
+  margin-top: 1px;
+  display: flex;
+  flex-direction: row;
+}
+
+.checkout__credit-input--expires {
+  margin-right: 5px;
+  width: 19%;
+  height: 15px;
+}
+
+.checkout__credit-input--cvv {
+  margin-right: 5px;
+  width: 19%;
+  height: 15px;
+}
+
+.checkout__credit-input--zip {
+  width: 19%;
+  height: 15px;
 }
