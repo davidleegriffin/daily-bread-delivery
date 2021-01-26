@@ -52,6 +52,7 @@ function Checkout() {
         </div>
       </div>
         <button>submit</button>
+    <img className="checkout__card-holder" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900"></img>
     </div>
   )
 }

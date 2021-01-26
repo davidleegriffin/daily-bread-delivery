@@ -121,7 +121,7 @@
   width: 400px;
   height: 551px;
   color: black;
-  z-index: 0;
+  z-index: 10;
 }
 
 .checkout__check-text span {
@@ -130,7 +130,8 @@
 
 .checkout__container--credit {
   position: relative;
-
+  left: 880px;
+  top: 75px;
 }
 
 
@@ -168,4 +169,11 @@
 .checkout__credit-input--zip {
   width: 19%;
   height: 15px;
+}
+
+.checkout__card-holder {
+  position: absolute;
+  left: 570px;
+  top: -150px;
+  z-index: -10;
 }
