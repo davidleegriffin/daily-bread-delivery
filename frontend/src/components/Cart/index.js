@@ -13,7 +13,7 @@ function Cart() {
   // const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
   let subtotal = 0;
-  
+
   const cartProducts = [
     {
       productName: "Cowboy Bebop",
@@ -59,19 +59,19 @@ function Cart() {
     }
   ]
 
-  useEffect(() => {
-    const getProducts = async (dispatch) => {
-      const res = await fetch('/api/products');
-      const productTest = await res.json();
-      console.log("product test", productTest);
-      // await dispatch(() => setProducts(productTest));
-    };
-    getProducts();
-  }, []);
-  
+  // useEffect(() => {
+  //   const getProducts = async (dispatch) => {
+  //     const res = await fetch('/api/products');
+  //     const productTest = await res.json();
+  //     console.log("product test", productTest);
+  //     // await dispatch(() => setProducts(productTest));
+  //   };
+  //   getProducts();
+  // }, []);
+
   // let test = getProducts();
   // console.log("test", test);
-  
+
 
   function cartConverter(array) {
     let cartObject = {};

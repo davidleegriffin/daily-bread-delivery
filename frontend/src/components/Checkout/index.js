@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {  useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 
@@ -6,6 +6,24 @@ import './Checkout.css';
 
 function Checkout() {
   let stateCart = useSelector(state => state.cart);
+  let products = [];
+
+  useEffect(() => {
+    const getProducts = async (dispatch) => {
+      const res = await fetch('/api/products');
+      const productTest = await res.json();
+      // console.log("product test", productTest);
+      for (let i=0; i < productTest.length; i++) {
+        // console.log(productTest[i]);
+        products.push(productTest[i].productName);
+        localStorage.setItem(i+1, productTest[i].productName);
+      };
+    };
+    getProducts();
+    return products;
+  }, []);
+
+  console.log("products", products);
 
   return (
     <div className="checkout__container--page">
