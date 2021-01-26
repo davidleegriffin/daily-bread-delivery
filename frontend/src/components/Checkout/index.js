@@ -42,19 +42,19 @@ function Checkout() {
       <h1>Checkout</h1>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
-          <span className="checkout__check">{localStorage.getItem(`${sortedCart[0]}`)}</span>
-          <span className="checkout__check">{sortedCart[1]}</span>
-          <span className="checkout__check">{sortedCart[2]}</span>
-          <span className="checkout__check">{sortedCart[3]}</span>
-          <span className="checkout__check">{sortedCart[4]}</span>
-          <span className="checkout__check">{sortedCart[5]}</span>
-          <span className="checkout__check">{sortedCart[6]}</span>
-          <span className="checkout__check">{sortedCart[7]}</span>
-          <span className="checkout__check">{sortedCart[8]}</span>
-          <span className="checkout__check">{sortedCart[9]}</span>
-          <span className="checkout__check">{sortedCart[10]}</span>
-          <span className="checkout__check">{sortedCart[11]}</span>
-          <span className="checkout__check">{sortedCart[12]}</span>
+          <span className="checkout__check">{(stateCart[0]) ? `id ${stateCart[0]}  -` : ""}{localStorage.getItem(`${sortedCart[0]}`)}</span>
+          <span className="checkout__check">{(stateCart[1]) ? `id ${stateCart[1]}  -` : ""  }{localStorage.getItem(`${sortedCart[1]}`)}</span>
+          <span className="checkout__check">{(stateCart[2]) ? `id ${stateCart[2]}  -` : ""  }{localStorage.getItem(`${sortedCart[2]}`)}</span>
+          <span className="checkout__check">{(stateCart[3]) ? `id ${stateCart[3]}  -` : ""  }{localStorage.getItem(`${sortedCart[3]}`)}</span>
+          <span className="checkout__check">{(stateCart[4]) ? `id ${stateCart[4]}  -` : ""  }{localStorage.getItem(`${sortedCart[4]}`)}</span>
+          <span className="checkout__check">{(stateCart[5]) ? `id ${stateCart[5]}  -` : ""  }{localStorage.getItem(`${sortedCart[5]}`)}</span>
+          <span className="checkout__check">{(stateCart[6]) ? `id ${stateCart[6]}  -` : ""  }{localStorage.getItem(`${sortedCart[6]}`)}</span>
+          <span className="checkout__check">{(stateCart[7]) ? `id ${stateCart[7]}  -` : ""  }{localStorage.getItem(`${sortedCart[7]}`)}</span>
+          <span className="checkout__check">{(stateCart[8]) ? `id ${stateCart[8]}  -` : ""  }{localStorage.getItem(`${sortedCart[8]}`)}</span>
+          <span className="checkout__check">{(stateCart[9]) ? `id ${stateCart[9]}  -` : ""  }{localStorage.getItem(`${sortedCart[9]}`)}</span>
+          <span className="checkout__check">{(stateCart[10]) ? `id ${stateCart[10]}  -` : ""  }{localStorage.getItem(`${sortedCart[10]}`)}</span>
+          <span className="checkout__check">{(stateCart[11]) ? `id ${stateCart[11]}  -` : ""  }{localStorage.getItem(`${sortedCart[11]}`)}</span>
+          <span className="checkout__check">{(stateCart[12]) ? `id ${stateCart[12]}  -` : ""  }{localStorage.getItem(`${sortedCart[12]}`)}</span>
 
         </div>
         <img src="./images/guest-check.png"></img>

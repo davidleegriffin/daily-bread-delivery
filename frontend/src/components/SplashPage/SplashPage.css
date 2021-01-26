@@ -3,12 +3,6 @@
   src: url("https://fonts.googleapis.com/css2?family=Indie+Flower");
 }
 
-body {
-  background: white;
-  background: radial-gradient(circle, rgba(236, 235, 148, 0.76) 50%, rgba(255,255,255,1) 85%);
-
-}
-
 .splash__main-container {
   width: 100%;
   height: 500px;
