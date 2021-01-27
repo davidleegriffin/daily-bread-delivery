@@ -47,7 +47,6 @@ function Checkout() {
           }}>
           <button className="checkout__button--home">Home</button>
       </NavLink>
-      <h1>Checkout</h1>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
           
@@ -157,7 +156,7 @@ function Checkout() {
         </div>
         <button className="checkout__credit-card--submit">submit</button>
       </div>
-    <img className="checkout__card-holder" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900"></img>
+    <img className="checkout__card-holder" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900" height="1100"></img>
     </div>
   )
 }
