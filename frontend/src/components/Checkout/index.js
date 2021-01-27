@@ -32,8 +32,8 @@ function Checkout() {
   let localCart = [];
   for (let x = 1; x < 8; x++) {
     localCart.push(JSON.parse(localStorage.getItem(x)));
-    console.log("local", localCart);
   }
+  console.log("local", localCart);
 
   return (
     <div className="checkout__container--page">
@@ -50,18 +50,90 @@ function Checkout() {
       <h1>Checkout</h1>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
-          <span className="checkout__check--desc">{(stateCart[0]) ? (`id ${stateCart[0]}${" -  "} ${localCart[0].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[0]) ? `${" $ "} ${localCart[0].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[1]) ? (`id ${stateCart[1]}${" -  "} ${localCart[1].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[1]) ? `${" $ "} ${localCart[1].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[2]) ? (`id ${stateCart[2]}${" -  "} ${localCart[2].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[2]) ? `${" $ "} ${localCart[2].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[3]) ? (`id ${stateCart[3]}${" -  "} ${localCart[3].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[3]) ? `${" $ "} ${localCart[3].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[4]) ? (`id ${stateCart[4]}${" -  "} ${localCart[4].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[4]) ? `${" $ "} ${localCart[4].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[5]) ? (`id ${stateCart[5]}${" -  "} ${localCart[5].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[5]) ? `${" $ "} ${localCart[5].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[6]) ? (`id ${stateCart[6]}${" -  "} ${localCart[6].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[6]) ? `${" $ "} ${localCart[6].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[7]) ? (`id ${stateCart[7]}${" -  "} ${localCart[7].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[7]) ? `${" $ "} ${localCart[7].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[8]) ? (`id ${stateCart[8]}${" -  "} ${localCart[8].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[8]) ? `${" $ "} ${localCart[8].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[9]) ? (`id ${stateCart[9]}${" -  "} ${localCart[9].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[9]) ? `${" $ "} ${localCart[9].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[10]) ? (`id ${stateCart[10]}${" -  "} ${localCart[10].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[10]) ? `${" $ "} ${localCart[10].price}` : ""}</span>
-          <span className="checkout__check--desc">{(stateCart[11]) ? (`id ${stateCart[11]}${" -  "} ${localCart[11].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[11]) ? `${" $ "} ${localCart[11].price}` : ""}</span>
+          
+          <span className="checkout__check--desc">
+            {(stateCart[0]) ? (`id ${stateCart[0]}${" -  "} ${localCart[stateCart[0]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[0]) ? `${" $ "} ${localCart[stateCart[0]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[1]) ? (`id ${stateCart[1]}${" -  "} ${localCart[stateCart[1]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[1]) ? `${" $ "} ${localCart[stateCart[1]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[2]) ? (`id ${stateCart[2]}${" -  "} ${localCart[stateCart[2]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[2]) ? `${" $ "} ${localCart[stateCart[2]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[3]) ? (`id ${stateCart[3]}${" -  "} ${localCart[stateCart[3]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[3]) ? `${" $ "} ${localCart[stateCart[3]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[4]) ? (`id ${stateCart[4]}${" -  "} ${localCart[stateCart[4]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[4]) ? `${" $ "} ${localCart[stateCart[4]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[5]) ? (`id ${stateCart[5]}${" -  "} ${localCart[stateCart[5]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[5]) ? `${" $ "} ${localCart[stateCart[5]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[6]) ? (`id ${stateCart[6]}${" -  "} ${localCart[stateCart[6]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[6]) ? `${" $ "} ${localCart[stateCart[6]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[7]) ? (`id ${stateCart[7]}${" -  "} ${localCart[stateCart[7]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[7]) ? `${" $ "} ${localCart[stateCart[7]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[8]) ? (`id ${stateCart[8]}${" -  "} ${localCart[stateCart[8]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[8]) ? `${" $ "} ${localCart[stateCart[8]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[9]) ? (`id ${stateCart[9]}${" -  "} ${localCart[(stateCart[9]-1).id].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[9]) ? `${" $ "} ${localCart[stateCart[9]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[10]) ? (`id ${stateCart[10]}${" -  "} ${localCart[stateCart[10]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[10]) ? `${" $ "} ${localCart[stateCart[10]-1].price}` : ""}
+          </span>
+
+          <span className="checkout__check--desc">
+            {(stateCart[11]) ? (`id ${stateCart[11]}${" -  "} ${localCart[stateCart[11]-1].productName}`) : ""}
+          </span>
+          <span className="checkout__check--price">
+            {(stateCart[11]) ? `${" $ "} ${localCart[stateCart[11]-1].price}` : ""}
+          </span>
 
         </div>
         <img src="./images/guest-check.png"></img>
