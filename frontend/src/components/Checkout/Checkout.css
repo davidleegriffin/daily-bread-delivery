@@ -139,6 +139,41 @@
   left: 85%;
 }
 
+.checkout__check--subtotal-text {
+  position: absolute;
+  top: 450px;
+  left: 235px;
+}
+
+.checkout__check--subtotal-price {
+  position: absolute;
+  top: 450px;
+  left: 327px;
+}
+
+.checkout__check--tax {
+  position: absolute;
+  top: 487px;
+  left: 327px;
+}
+
+.checkout__check--total {
+  position: absolute;
+  top: 525px;
+  left: 327px;
+}
+
+.checkout__credit-card--submit-top {
+  border: none;
+  outline: none;
+  background-color: white;
+  position: absolute;
+  top: -28px;
+  left: 193px;
+  width: 75px;
+  height: 30px;
+}
+
 .checkout__container--credit {
   position: relative;
   left: 880px;

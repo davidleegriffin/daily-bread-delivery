@@ -8,7 +8,7 @@ import './Cart.css';
 
 function Cart() {
   const dispatch = useDispatch();
-  const [products, setProducts] = useState();
+  // const [products, setProducts] = useState();
   // const rawCart = localStorage.getItem("localCart");
   // const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
@@ -91,10 +91,14 @@ function Cart() {
   console.log("currentCart", currentCart);
 
   for (let [key, value] of Object.entries(currentCart)) {
-    subtotal += (cartProducts[key-1].price * value);
+    console.log("key", key, "value", value);
+    subtotal += (cartProducts[(key-1)].price * value);
   }
+  localStorage.setItem("subTotal", subtotal.toFixed(2));
   let tax = subtotal * .0825;
+  localStorage.setItem("tax", tax.toFixed(2));
   let total = subtotal + tax;
+  localStorage.setItem("total", total.toFixed(2));
 
   const emptyCart = async () => {
     await dispatch(cartActions.emptyCart());

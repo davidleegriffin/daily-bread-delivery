@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import store from '../../store';
 // import Cart from '../Cart';
@@ -56,20 +56,47 @@ function HomePage() {
   // const [isLoaded, setIsLoaded] = useState();
   // const [products, setProducts] = useState([]);
   const cartQuantity = useSelector(state => state.cart.length);
-  // let cart = useSelector(state => state.cart);
+  let cart = useSelector(state => state.cart);
 
-  // function cartConverter(array) {
-  //   let cartObject = {};
-  //   for (let i = 0; i < array.length; i++) {
-  //     let currentValue = array[i];
-  //     if (cartObject[currentValue] === undefined) {
-  //       cartObject[currentValue] = 1;
-  //     } else {
-  //       cartObject[currentValue] += 1;
-  //     }
-  //   }
-  //   return cartObject;
-  // };
+  let products = [];
+
+  useEffect(() => {
+    const getProducts = async (dispatch) => {
+      const res = await fetch('/api/products');
+      const productTest = await res.json();
+      // console.log("product test", productTest);
+      for (let i = 0; i < productTest.length; i++) {
+        let { id, productName, description, price } = productTest[i];
+        // console.log({ id, productName, description, price });
+        let cornelius = { id, productName, description, price };
+        // console.log("cornelius", cornelius);
+        products.push(productTest[i].productName, "      ", productTest[i].price);
+        localStorage.setItem(`${cornelius.id}`, JSON.stringify(cornelius));
+      };
+    };
+    getProducts();
+    return products;
+  }, []);
+
+  // console.log("products", products);
+  let localCart = [];
+  for (let x = 1; x < 8; x++) {
+    localCart.push(JSON.parse(localStorage.getItem(x)));
+  }
+  // console.log("local", localCart);
+
+  function cartConverter(array) {
+    let cartObject = {};
+    for (let i = 0; i < array.length; i++) {
+      let currentValue = array[i];
+      if (cartObject[currentValue] === undefined) {
+        cartObject[currentValue] = 1;
+      } else {
+        cartObject[currentValue] += 1;
+      }
+    }
+    return cartObject;
+  };
 
 
 
@@ -106,12 +133,12 @@ function HomePage() {
   const addItem = async (e) => {
     e.preventDefault();
     const productId = e.target.value;
-    // console.log("++++++", e.target.value);
-    // let localCart = cartConverter(cart);
-    // let localString = JSON.stringify(localCart);
-    // console.log(localString);
-    // await localStorage.setItem("localCart", localString);
+    console.log("++++++", e.target.value);
+    let localCart = cartConverter(cart);
+    let localString = JSON.stringify(localCart);
+    console.log(localString);
     await dispatch(cartActions.addToCart(productId));
+    await localStorage.setItem("localCart", localString);
   };
 
   const emptyCart = async () => {

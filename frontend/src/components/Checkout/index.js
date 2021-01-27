@@ -21,19 +21,19 @@ function Checkout() {
         let cornelius = { id, productName, description, price };
         // console.log("cornelius", cornelius);
         products.push(productTest[i].productName, "      ", productTest[i].price);
-        localStorage.setItem(i+1, JSON.stringify(cornelius));
+        localStorage.setItem(`${cornelius.id}`, JSON.stringify(cornelius));
       };
     };
     getProducts();
     return products;
   }, []);
 
-  console.log("products", products);
+  // console.log("products", products);
   let localCart = [];
   for (let x = 1; x < 8; x++) {
     localCart.push(JSON.parse(localStorage.getItem(x)));
   }
-  console.log("local", localCart);
+  // console.log("local", localCart);
 
   return (
     <div className="checkout__container--page">
@@ -115,7 +115,7 @@ function Checkout() {
           </span>
 
           <span className="checkout__check--desc">
-            {(stateCart[9]) ? (`id ${stateCart[9]}${" -  "} ${localCart[(stateCart[9]-1).id].productName}`) : ""}
+            {(stateCart[9]) ? (`id ${stateCart[9]}${" -  "} ${localCart[(stateCart[9]-1)].productName}`) : ""}
           </span>
           <span className="checkout__check--price">
             {(stateCart[9]) ? `${" $ "} ${localCart[stateCart[9]-1].price}` : ""}
@@ -128,19 +128,25 @@ function Checkout() {
             {(stateCart[10]) ? `${" $ "} ${localCart[stateCart[10]-1].price}` : ""}
           </span>
 
-          <span className="checkout__check--desc">
-            {(stateCart[11]) ? (`id ${stateCart[11]}${" -  "} ${localCart[stateCart[11]-1].productName}`) : ""}
+          <span className="checkout__check--subtotal-text">
+            Subtotal
           </span>
-          <span className="checkout__check--price">
-            {(stateCart[11]) ? `${" $ "} ${localCart[stateCart[11]-1].price}` : ""}
+          <span className="checkout__check--subtotal-price">
+            ${localStorage.getItem("subTotal")}
           </span>
-
+          <span className="checkout__check--tax">
+            ${localStorage.getItem("tax")}
+          </span>
+          <span className="checkout__check--total">
+            ${localStorage.getItem("total")}
+          </span>
         </div>
         <img src="./images/guest-check.png"></img>
 
       </div>
       <div className="checkout__container--credit">
         <img alt="credit card" src="./images/generic-credit-card.jpeg" />
+        <button className="checkout__credit-card--submit-top">submit</button>
         <div className="checkout__form-container--credit">
           <input className="checkout__credit-input--cardNum" type="text" placeholder="Credit Card #"></input>
           <div className="checkout__credit-subContainer">
