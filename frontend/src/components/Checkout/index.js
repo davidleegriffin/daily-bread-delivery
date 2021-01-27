@@ -15,10 +15,13 @@ function Checkout() {
       const res = await fetch('/api/products');
       const productTest = await res.json();
       // console.log("product test", productTest);
-      for (let i=0; i < productTest.length; i++) {
-        // console.log(productTest[i]);
-        products.push(productTest[i].productName);
-        localStorage.setItem(i+1, productTest[i].productName);
+      for (let i = 0; i < productTest.length; i++) {
+        let { id, productName, description, price } = productTest[i];
+        // console.log({ id, productName, description, price });
+        let cornelius = { id, productName, description, price };
+        // console.log("cornelius", cornelius);
+        products.push(productTest[i].productName, "      ", productTest[i].price);
+        localStorage.setItem(i+1, JSON.stringify(cornelius));
       };
     };
     getProducts();
@@ -26,6 +29,11 @@ function Checkout() {
   }, []);
 
   console.log("products", products);
+  let localCart = [];
+  for (let x = 1; x < 8; x++) {
+    localCart.push(JSON.parse(localStorage.getItem(x)));
+    console.log("local", localCart);
+  }
 
   return (
     <div className="checkout__container--page">
@@ -42,19 +50,18 @@ function Checkout() {
       <h1>Checkout</h1>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
-          <span className="checkout__check">{(stateCart[0]) ? `id ${stateCart[0]}  -` : ""}{localStorage.getItem(`${sortedCart[0]}`)}</span>
-          <span className="checkout__check">{(stateCart[1]) ? `id ${stateCart[1]}  -` : ""  }{localStorage.getItem(`${sortedCart[1]}`)}</span>
-          <span className="checkout__check">{(stateCart[2]) ? `id ${stateCart[2]}  -` : ""  }{localStorage.getItem(`${sortedCart[2]}`)}</span>
-          <span className="checkout__check">{(stateCart[3]) ? `id ${stateCart[3]}  -` : ""  }{localStorage.getItem(`${sortedCart[3]}`)}</span>
-          <span className="checkout__check">{(stateCart[4]) ? `id ${stateCart[4]}  -` : ""  }{localStorage.getItem(`${sortedCart[4]}`)}</span>
-          <span className="checkout__check">{(stateCart[5]) ? `id ${stateCart[5]}  -` : ""  }{localStorage.getItem(`${sortedCart[5]}`)}</span>
-          <span className="checkout__check">{(stateCart[6]) ? `id ${stateCart[6]}  -` : ""  }{localStorage.getItem(`${sortedCart[6]}`)}</span>
-          <span className="checkout__check">{(stateCart[7]) ? `id ${stateCart[7]}  -` : ""  }{localStorage.getItem(`${sortedCart[7]}`)}</span>
-          <span className="checkout__check">{(stateCart[8]) ? `id ${stateCart[8]}  -` : ""  }{localStorage.getItem(`${sortedCart[8]}`)}</span>
-          <span className="checkout__check">{(stateCart[9]) ? `id ${stateCart[9]}  -` : ""  }{localStorage.getItem(`${sortedCart[9]}`)}</span>
-          <span className="checkout__check">{(stateCart[10]) ? `id ${stateCart[10]}  -` : ""  }{localStorage.getItem(`${sortedCart[10]}`)}</span>
-          <span className="checkout__check">{(stateCart[11]) ? `id ${stateCart[11]}  -` : ""  }{localStorage.getItem(`${sortedCart[11]}`)}</span>
-          <span className="checkout__check">{(stateCart[12]) ? `id ${stateCart[12]}  -` : ""  }{localStorage.getItem(`${sortedCart[12]}`)}</span>
+          <span className="checkout__check--desc">{(stateCart[0]) ? (`id ${stateCart[0]}${" -  "} ${localCart[0].productName}`) : ""}</span><span className="checkout__check--price">{(stateCart[0]) ? `${" $ "} ${localCart[0].price}` : ""}</span>
+          <span className="checkout__check--desc">{(stateCart[1]) ? (`id ${stateCart[1]}${" -  "} ${localCart[1].productName}${" $ "} ${localCart[1].price}`) : ""}</span>          {/* <span className="checkout__check">{(stateCart[2]) ? `id ${stateCart[2]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[3]) ? `id ${stateCart[3]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[4]) ? `id ${stateCart[4]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[5]) ? `id ${stateCart[5]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[6]) ? `id ${stateCart[6]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[7]) ? `id ${stateCart[7]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[8]) ? `id ${stateCart[8]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[9]) ? `id ${stateCart[9]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[10]) ? `id ${stateCart[10]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[11]) ? `id ${stateCart[11]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>}`)}</span> */}
+          {/* <span className="checkout__check">{(stateCart[12]) ? `id ${stateCart[12]}  -` : ""  }{localCart[0].productName}<span className="checkout__check--price">{ `${" $ "}` }{localCart[0].price}</span>]}`)}</span> */}
 
         </div>
         <img src="./images/guest-check.png"></img>

@@ -114,6 +114,7 @@
 .checkout__check-text {
   position: absolute;
   display: flex;
+  align-items: flex-start;
   flex-direction: column;
   background-color: transparent;
   top: 23%;
@@ -127,8 +128,14 @@
   z-index: 10;
 }
 
-.checkout__check-text span {
-  margin: 0.27%;
+.checkout__check--desc {
+ 
+}
+
+.checkout__check--price {
+  position: relative;
+  top: -37px;
+  left: 85%;
 }
 
 .checkout__container--credit {
