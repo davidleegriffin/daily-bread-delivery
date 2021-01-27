@@ -126,15 +126,16 @@
   font-weight: 800;
   color: black;
   z-index: 10;
+  margin-bottom: -100px;
 }
 
 .checkout__check--desc {
- 
+ margin-bottom: -33px;
 }
 
 .checkout__check--price {
   position: relative;
-  top: -37px;
+  /* top: -37px; */
   left: 85%;
 }
 
