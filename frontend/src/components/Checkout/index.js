@@ -37,16 +37,28 @@ function Checkout() {
 
   return (
     <div className="checkout__container--page">
-      <NavLink
-          className="cart__navbar"
-          to={{
-            pathname: "/home",
-            cartProps: {
-              name: "cart"
-            }
-          }}>
-          <button className="checkout__button--home">Home</button>
-      </NavLink>
+      <div className="checkout__buttons-container">
+        <NavLink
+            className="cart__navbar"
+            to={{
+              pathname: "/home",
+              cartProps: {
+                name: "cart"
+              }
+            }}>
+            <button className="checkout__button--home">Home</button>
+        </NavLink>
+        <NavLink
+            className="cart__navbar"
+            to={{
+              pathname: "/order",
+              cartProps: {
+                name: "cart"
+              }
+            }}>
+            <button className="checkout__button--cart">Cart</button>
+        </NavLink>
+      </div>
       <div className="checkout__check-container">
         <div className="checkout__check-text">
           
