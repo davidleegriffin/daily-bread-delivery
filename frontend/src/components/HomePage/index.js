@@ -143,6 +143,7 @@ function HomePage() {
 
   const emptyCart = async () => {
     await dispatch(cartActions.emptyCart());
+    localStorage.clear();
   }
 
   return (
@@ -166,13 +167,15 @@ function HomePage() {
             </NavLink>
         </div>
           <span className="home__cart--quantity">{cartQuantity}</span>
-          <div className="home__container--emptyCart">
+        <div className="home__container--emptyCart">
+          
           <span className="home__text--emptyCart">Empty Cart</span>
           <button className="home__button--emptyCart" onClick={ emptyCart }></button>
           </div>
 
       </div>
       <div className="home__button-container--logout">
+        
         <button className="home__logout-button" onClick={logout}>Log Out</button>
       </div>
 

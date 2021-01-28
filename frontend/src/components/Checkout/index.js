@@ -9,6 +9,7 @@ function Checkout() {
   let sortedCart = stateCart.sort();
   console.log("sortedCart", sortedCart);
   let products = [];
+  
 
   useEffect(() => {
     const getProducts = async (dispatch) => {

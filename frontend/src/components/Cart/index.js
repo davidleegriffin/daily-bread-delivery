@@ -102,6 +102,7 @@ function Cart() {
 
   const emptyCart = async () => {
     await dispatch(cartActions.emptyCart());
+    localStorage.clear();
   }
 
   return (
