@@ -72,11 +72,11 @@ function HomePage() {
         // console.log("cornelius", cornelius);
         products.push(productTest[i].productName, "      ", productTest[i].price);
         localStorage.setItem(`${cornelius.id}`, JSON.stringify(cornelius));
+        // return products;
       };
     };
     getProducts();
-    return products;
-  }, []);
+  }, [dispatch]);
 
   // console.log("products", products);
   let localCart = [];

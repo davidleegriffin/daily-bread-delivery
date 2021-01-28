@@ -7,9 +7,10 @@
 }
 
 .signup__image--background {
-  margin-left: 3.3%;
+  margin-left: 0.3%;
   margin-top: 10%;
   border-radius: 25px;
+  box-shadow: 0px 0px 30px 20px rgba(0, 0, 0, 0.7);
 }
 
 .signup__form-container {
@@ -30,9 +31,6 @@
   outline: none;
   border: none;
   background-color: transparent;
-  /* margin-left: 55px;
-  margin-right: 55px; */
-  /* transition: transform 1.75s; */
 }
 
 .form-signup__wrapper--input {
@@ -56,20 +54,6 @@
   transform: scale(1.25);
 }
 
-/* .signup__input-fields:hover {
-  background-color:  rgba(255, 255, 255, 0.8);
-  border: 1px solid black;
-  box-shadow: 2px 2px 10px 10px beige;
-  transform: scale(1.83);
-}
-
-.signup__input-fields:focus {
-  background-color:  rgba(255, 255, 255, 0.8);
-  border-bottom: 2px solid black;
-  box-shadow: 2px 2px 10px 10px beige;
-  transform: scale(1.83);
-} */
-
 .signup__input-fields--baker {
   margin-left: 10px;
 }
@@ -77,12 +61,6 @@
 .signup__input-label--baker {
   margin-left: 55px;
   margin-right: 30px;
-}
-
-.signup__input-label {
-  /* padding: 4px; */
-  /* margin-left: 55px;
-  margin-right: 5px; */
 }
 
 .signup__submit-button {
@@ -161,13 +139,6 @@
     opacity: 1;
   }
 }
-
-
-/* .signup__welcome-button:hover {
-  -webkit-animation: flip-scale-up-diag-2 0.5s linear both;
-  animation: flip-scale-up-diag-2 0.5s linear both;
-  transition-timing-function: ease-in-out;
-} */
 
 .signup__button-container--right {
   grid-column-start: 3;

@@ -31,6 +31,21 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
+export const demoLogin = () => async (dispatch) => {
+  // const { "demo@user.io", "password" } = user;
+  let email = "demo@user.io";
+  let password = "password";
+  const response = await fetch('/api/session', {
+    method: 'POST',
+    body: JSON.stringify({
+      email,
+      password,
+    }),
+  });
+  dispatch(setUser(response.data.user));
+  return response;
+};
+
 export const signup = (user) => async (dispatch) => {
   const { email, password, address, city, state, zip, avatar, baker } = user;
   const response = await fetch("/api/users", {

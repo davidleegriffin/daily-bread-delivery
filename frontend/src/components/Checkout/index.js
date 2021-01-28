@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, {  useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from "react-router-dom";
 
@@ -10,17 +10,13 @@ function Checkout() {
   console.log("sortedCart", sortedCart);
   let products = [];
   
-
   useEffect(() => {
     const getProducts = async (dispatch) => {
       const res = await fetch('/api/products');
       const productTest = await res.json();
-      // console.log("product test", productTest);
       for (let i = 0; i < productTest.length; i++) {
         let { id, productName, description, price } = productTest[i];
-        // console.log({ id, productName, description, price });
         let cornelius = { id, productName, description, price };
-        // console.log("cornelius", cornelius);
         products.push(productTest[i].productName, "      ", productTest[i].price);
         localStorage.setItem(`${cornelius.id}`, JSON.stringify(cornelius));
       };
@@ -33,9 +29,6 @@ function Checkout() {
   for (let x = 1; x < 8; x++) {
     localCart.push(JSON.parse(localStorage.getItem(x)));
   }
-
-
- 
 
   return (
     <div className="checkout__container--page">
@@ -154,7 +147,7 @@ function Checkout() {
             ${localStorage.getItem("total")}
           </span>
         </div>
-        <img src="./images/guest-check.png"></img>
+        <img src="./images/guest-check.png" alt="background-check"></img>
 
       </div>
       <div className="checkout__container--credit">
@@ -188,7 +181,7 @@ function Checkout() {
           <button className="checkout__credit-card--submit">submit</button>
         </NavLink>
       </div>
-    <img className="checkout__card-holder" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900" height="1100"></img>
+    <img className="checkout__card-holder" alt="credit-card-tray" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900" height="1100"></img>
     </div>
   )
 }

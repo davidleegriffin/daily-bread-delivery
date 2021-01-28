@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React from 'react';
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import * as cartActions from '../../store/cartActions';
@@ -8,9 +8,6 @@ import './Cart.css';
 
 function Cart() {
   const dispatch = useDispatch();
-  // const [products, setProducts] = useState();
-  // const rawCart = localStorage.getItem("localCart");
-  // const localCart = JSON.parse(rawCart);
   let stateCart = useSelector(state => state.cart);
   let subtotal = 0;
 
@@ -58,20 +55,6 @@ function Cart() {
       imageURL: "https://images.unsplash.com/photo-1534620808146-d33bb39128b2?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-			    1.2.1&auto=format&fit=crop&w=500&q=60",
     }
   ]
-
-  // useEffect(() => {
-  //   const getProducts = async (dispatch) => {
-  //     const res = await fetch('/api/products');
-  //     const productTest = await res.json();
-  //     console.log("product test", productTest);
-  //     // await dispatch(() => setProducts(productTest));
-  //   };
-  //   getProducts();
-  // }, []);
-
-  // let test = getProducts();
-  // console.log("test", test);
-
 
   function cartConverter(array) {
     let cartObject = {};
@@ -127,9 +110,6 @@ function Cart() {
           <div>Total: <span className="cart__money">${total.toFixed(2)}</span></div>
         </div>
         <div>
-          {/* <a href="https://davidleegriffin.github.io/" target="_blank" rel="noreferrer">
-            <button className="cart__button--checkout">CHECKOUT</button>
-          </a> */}
         <NavLink
           className="cart__navbar"
           to={{

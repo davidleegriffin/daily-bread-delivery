@@ -29,7 +29,7 @@ function LoginFormPage() {
     e.preventDefault();
     setErrors([]);
     resetForm();
-    return dispatch(sessionActions.login( "demo@user.io", "password" ))
+    return dispatch(sessionActions.demoLogin( ))
       .catch((res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
       });
@@ -39,8 +39,7 @@ function LoginFormPage() {
     document.getElementById("loginForm").reset();
   };
 
-  const welcomeSplash = (e) => {
-    // e.preventDefault();
+  const welcomeSplash = () => {
     history.push("/");
   };
 
@@ -85,7 +84,7 @@ function LoginFormPage() {
             />
           </div>  
           <button type="submit" className="login__submit-button">Log In</button>
-          <button className="login__submit-button--demo">Demo-Login</button>
+          <button className="login__submit-button--demo" onClick={demoSubmit}>Demo-Login</button>
         </div>    
       </form>
       <div className="login__button-container--right">

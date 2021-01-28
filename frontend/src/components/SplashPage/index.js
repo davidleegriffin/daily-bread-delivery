@@ -1,5 +1,4 @@
 import React from 'react';
-// import * as sessionActions from "../../store/session";
 import { useSelector } from "react-redux";
 import { Redirect } from 'react-router-dom';
 import { useHistory } from "react-router-dom";
@@ -7,9 +6,7 @@ import './SplashPage.css';
 
 function SplashPage() {
   const sessionUser = useSelector(state => state.session.user);
-  // const [userId, setUserId] = useState();
-  // const dispatch = useDispatch();
-  // const [errors, setErrors] = useState([]);
+ 
   const history = useHistory();
 
   if (sessionUser) return (<Redirect to="/home" />);
@@ -21,7 +18,6 @@ function SplashPage() {
   const signupSplash = (e) => {
     history.push("/signup");
   };
-
 
   return (
     <div className="splash__main-container">
