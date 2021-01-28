@@ -29,12 +29,13 @@ function Checkout() {
     return products;
   }, []);
 
-  // console.log("products", products);
   let localCart = [];
   for (let x = 1; x < 8; x++) {
     localCart.push(JSON.parse(localStorage.getItem(x)));
   }
-  // console.log("local", localCart);
+
+
+ 
 
   return (
     <div className="checkout__container--page">
@@ -158,7 +159,16 @@ function Checkout() {
       </div>
       <div className="checkout__container--credit">
         <img alt="credit card" src="./images/generic-credit-card.jpeg" />
+        <NavLink
+          className="cart__navbar"
+          to={{
+            pathname: "/thanks",
+            cartProps: {
+              name: "cart"
+            }
+          }}>
         <button className="checkout__credit-card--submit-top">submit</button>
+        </NavLink>
         <div className="checkout__form-container--credit">
           <input className="checkout__credit-input--cardNum" type="text" placeholder="Credit Card #"></input>
           <div className="checkout__credit-subContainer">
@@ -167,7 +177,16 @@ function Checkout() {
             <input className="checkout__credit-input--zip" type="text" placeholder="ZIP"></input>
           </div>
         </div>
-        <button className="checkout__credit-card--submit">submit</button>
+        <NavLink
+          className="cart__navbar"
+          to={{
+            pathname: "/thanks",
+            cartProps: {
+              name: "cart"
+            }
+          }}>
+          <button className="checkout__credit-card--submit">submit</button>
+        </NavLink>
       </div>
     <img className="checkout__card-holder" src="https://cdnimg.webstaurantstore.com/images/products/xxl/395620/1461698.jpg" width="900" height="1100"></img>
     </div>

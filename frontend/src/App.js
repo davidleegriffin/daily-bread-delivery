@@ -8,6 +8,7 @@ import SplashPage from './components/SplashPage';
 import HomePage from './components/HomePage';
 import Cart from './components/Cart';
 import Checkout from './components/Checkout';
+import ThankYou from './components/ThankYou';
 
 function App() {
   const dispatch = useDispatch();
@@ -24,7 +25,8 @@ function App() {
         <Switch>
           <Route path="/login" component={ LoginFormPage }/>
           <Route path="/signup" component={ SignupFormPage } />
-          <Route exact path="/" component={ SplashPage } />
+          <Route exact path="/" component={SplashPage} />
+          <Route exact path="/thanks" component={ThankYou} />
           <Route exact path="/checkout" component ={Checkout} />
           <Route exact path="/order" component={Cart} />
           <Route exact path="/home" component={HomePage} />
