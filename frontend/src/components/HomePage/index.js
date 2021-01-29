@@ -109,7 +109,7 @@ function HomePage() {
       slidesToShow: 1,
       slidesToScroll: 1,
       initialSlide: 0,
-      adaptiveHeight: true,
+      adaptiveHeight: false,
       centerMode: true,
       centerPadding: '150px',
       nextArrow: <NextArrow />,
@@ -121,7 +121,7 @@ function HomePage() {
     //   await dispatch(cartActions.getProducts());
     // };
 
-    
+
 
 
   const logout = async (e) => {
@@ -168,14 +168,14 @@ function HomePage() {
         </div>
           <span className="home__cart--quantity">{cartQuantity}</span>
         <div className="home__container--emptyCart">
-          
+
           <span className="home__text--emptyCart">Empty Cart</span>
           <button className="home__button--emptyCart" onClick={ emptyCart }></button>
           </div>
 
       </div>
       <div className="home__button-container--logout">
-        
+
         <button className="home__logout-button" onClick={logout}>Log Out</button>
       </div>
 
@@ -277,6 +277,8 @@ function HomePage() {
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1590346328376-f21c8e5b630e?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTd8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               alt="bread-5"
+              height="330px"
+              width="450px"
             >
             </img>
           </div>
@@ -294,6 +296,8 @@ function HomePage() {
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1584471973216-cadfdf0e15e5?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTR8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               alt="bread-6"
+              height="330px"
+              width="450px"
             >
             </img>
           </div>
@@ -311,6 +315,8 @@ function HomePage() {
               className="home__image--bottom"
               src="https://images.unsplash.com/photo-1534620808146-d33bb39128b2?ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTN8OTc0NzE2NTd8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
               alt="bread-7"
+              height="330px"
+              width="450px"
             >
             </img>
           </div>
