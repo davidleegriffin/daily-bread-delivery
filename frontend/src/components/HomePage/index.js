@@ -116,14 +116,6 @@ function HomePage() {
       prevArrow: <PrevArrow />
   };
 
-
-    // const getMainProducts = async (dispatch) => {
-    //   await dispatch(cartActions.getProducts());
-    // };
-
-
-
-
   const logout = async (e) => {
     e.preventDefault();
     await dispatch(sessionActions.logout());
