@@ -102,7 +102,7 @@ function Cart() {
           <button className="cart__button--home">Home</button>
         </NavLink>
         <div>
-        <button className="cart__button--emptyCart" onClick={ emptyCart }></button>
+        <button className="cart__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
         </div>
         <div className="cart__container--monetary">
           <div>Subtotal: <span className="cart__money">${subtotal.toFixed(2)}</span></div>

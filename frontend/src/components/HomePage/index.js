@@ -159,11 +159,9 @@ function HomePage() {
             </NavLink>
         </div>
           <span className="home__cart--quantity">{cartQuantity}</span>
-        <div className="home__container--emptyCart">
-
-          <span className="home__text--emptyCart">Empty Cart</span>
-          <button className="home__button--emptyCart" onClick={ emptyCart }></button>
-          </div>
+          <div>
+        <button className="home__button--emptyCart" onClick={ emptyCart }>Empty Cart</button>
+        </div>
 
       </div>
       <div className="home__button-container--logout">
