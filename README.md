@@ -71,4 +71,4 @@
 - SQL
 - PostgreSQL
 - React-slick
-
+- Animista

@@ -69,12 +69,12 @@ function Cart() {
     return cartObject;
   };
 
-  console.log("stateCart", stateCart)
+  // console.log("stateCart", stateCart)
   const currentCart = cartConverter(stateCart);
-  console.log("currentCart", currentCart);
+  // console.log("currentCart", currentCart);
 
   for (let [key, value] of Object.entries(currentCart)) {
-    console.log("key", key, "value", value);
+    // console.log("key", key, "value", value);
     subtotal += (cartProducts[(key-1)].price * value);
   }
   localStorage.setItem("subTotal", subtotal.toFixed(2));

@@ -61,7 +61,7 @@ function HomePage() {
   let products = [];
 
   useEffect(() => {
-    const getProducts = async (dispatch) => {
+    const getProducts = async () => {
       const res = await fetch('/api/products');
       const productTest = await res.json();
       // console.log("product test", productTest);
@@ -76,7 +76,7 @@ function HomePage() {
       };
     };
     getProducts();
-  }, [dispatch]);
+  }, );
 
   // console.log("products", products);
   let localCart = [];
@@ -125,10 +125,10 @@ function HomePage() {
   const addItem = async (e) => {
     e.preventDefault();
     const productId = e.target.value;
-    console.log("++++++", e.target.value);
+    // console.log("++++++", e.target.value);
     let localCart = cartConverter(cart);
     let localString = JSON.stringify(localCart);
-    console.log(localString);
+    // console.log(localString);
     await dispatch(cartActions.addToCart(productId));
     await localStorage.setItem("localCart", localString);
   };

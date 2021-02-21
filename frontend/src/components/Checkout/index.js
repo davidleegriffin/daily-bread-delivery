@@ -6,8 +6,8 @@ import './Checkout.css';
 
 function Checkout() {
   let stateCart = useSelector(state => state.cart);
-  let sortedCart = stateCart.sort();
-  console.log("sortedCart", sortedCart);
+  // let sortedCart = stateCart.sort();
+  // console.log("sortedCart", sortedCart);
   let products = [];
   
   useEffect(() => {
@@ -23,7 +23,7 @@ function Checkout() {
     };
     getProducts();
     return products;
-  }, []);
+  }, );
 
   let localCart = [];
   for (let x = 1; x < 8; x++) {

@@ -23,7 +23,7 @@ function ThankYou() {
           </NavLink>
       </div>
       <div className="rick__roll--video">
-        <iframe src="https://archive.org/embed/Rick_Astley_Never_Gonna_Give_You_Up" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe>
+        {/* <iframe src="https://archive.org/embed/Rick_Astley_Never_Gonna_Give_You_Up" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen></iframe> */}
       </div>
       </div>
   )
