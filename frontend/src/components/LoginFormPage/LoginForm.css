@@ -14,8 +14,8 @@
 }
 
 .form-login {
-  font-family: Indie Flower;
-  font-size: 1.2rem;
+  font-family: Indie Flower, "sans-serif";
+  font-size: 1.75rem;
   font-weight: 900;
   width: 712px;
   height: 500px;
@@ -40,12 +40,12 @@
 }
 
 .form-login h2 {
-  font-family: sans-serif;
+  font-family: Indie Flower, "sans-serif";
   margin: 0;
   padding: 0;
   color: #000;
   margin-left: 30%;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 
@@ -58,37 +58,37 @@
 
 .login-form__input--name,
 .login-form__input--password {
-  font-family: Nunito, sans-serif;
+  font-family: Indie Flower, "sans-serif";
   font-size: 16px;
   color: #fff;
   background: transparent;
   width: 80%;
   outline: none;
   border: none;
-  border-bottom: 1px solid green;
+  border-bottom: 1px solid black;
   margin-bottom: 30px;
 }
 
 .login-form__label--name {
-  font-family: Nunito, sans-serif;
+  font-family: Indie Flower, "sans-serif";
   position: absolute;
-  top: -6px;
+  top: -10px;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
+  font-size: 24px;
+  color: #000;
   pointer-events:none;
   transition: 0.5s;
 }
 
 .login-form__label--password {
-  font-family: Nunito, sans-serif;
+  font-family: Indie Flower, "sans-serif";
   position: absolute;
-  top: 45px;
+  top: 47px;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
-  color: #fff;
+  font-size: 24px;
+  color: #000;
   pointer-events:none;
   transition: 0.5s;
 }
@@ -97,27 +97,28 @@
 .login-form__input--name:hover ~ .login-form__label--name,
 .login-form__input--name:valid ~ .login-form__label--name {
   top: -30px;
-  color: rgba(0, 128, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
 }
 
 .login-form__input--password:focus ~ .login-form__label--password,
 .login-form__input--password:hover ~ .login-form__label--password,
 .login-form__input--password:valid ~ .login-form__label--password {
-  color: rgba(0, 128, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
   font-size: 12px;
   top: 21px;
 }
 
 .login-form__button {
-  font-family: Nunito, sans-serif;
-  font-size: large;
+  font-family: Indie Flower, "sans-serif";
+  font-size: 24px;
   font-weight: 600;
   width: 88px;
   height: 38px;
-  margin-top: 25px;
+  margin-top: 12px;
   margin-left: 30%;
-  background-color: rgba(0, 128, 0, 0.5);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   box-shadow: none;
   border: none;
@@ -125,14 +126,15 @@
 }
 
 .login-form__button--demo {
-  font-family: Nunito, sans-serif;
-  font-size: large;
+  font-family: Indie Flower, "sans-serif";
+  font-size: 24px;
   font-weight: 600;
-  width: 88px;
+  width: 158px;
   height: 43px;
   margin-top: 15px;
-  margin-left: 30%;
-  background-color: rgba(0, 128, 0, 0.5);
+  margin-left: 12%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   box-shadow: none;
   border: none;
