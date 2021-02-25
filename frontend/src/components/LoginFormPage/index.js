@@ -58,33 +58,35 @@ function LoginFormPage() {
         <button className="login__signup-button" onClick={signupSplash}>Signup</button>
       </div>
       <img className="login__image--background" alt="background-login" src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=752&q=80" ></img>
-      <form className="login__form-login effects" onSubmit={handleSubmit} id="loginForm">
+      <form className="form-login" onSubmit={handleSubmit} id="loginForm" autoComplete="off">
         <div className="login__input-wrapper--main">  
-          <span>Login</span>  
-          <div className="login__input-wrapper--email">
-            <label className="login__input-label--email">Email</label>
+          <span><h2>Login</h2></span>  
+          <div className="input-wrapper">
             <input
               type="text"
+              autoComplete="off"
               value={email}
               onChange={(e) => setemail(e.target.value)}
-              required=""
-              className="login__input--email"
+              required=" "
+              className="login-form__input--name"
               name=""
             />
-          </div>
-          <div className="login__input-wrapper--password">  
-            <label className="login__input-label--password">Password</label>
+            <label className="login-form__label--name">Email</label>
+            {/* </div> */}
+            {/* <div className="login__input-wrapper--password">   */}
             <input
               type="password"
+              autoComplete="off"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required=""
-              className="login__input--password"
-                name=""
+              required=" "
+              className="login-form__input--password"
+              name=""
             />
+            <label className="login-form__label--password">Password</label>
           </div>  
-          <button type="submit" className="login__submit-button">Log In</button>
-          <button className="login__submit-button--demo" onClick={demoSubmit}>Demo-Login</button>
+          <button type="submit" className="login-form__button">Log In</button>
+          <button className="login-form__button--demo" onClick={demoSubmit}>Demo-Login</button>
         </div>    
       </form>
       <div className="login__button-container--right">
