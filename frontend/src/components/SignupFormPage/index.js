@@ -174,6 +174,7 @@ function SignupFormPage() {
       <div className="signup__button-container--right">
         <button className="signup__login-button" onClick={loginSplash}>Login</button>
       </div>
+      <span className="splash__attribution">Photo by <a href="https://unsplash.com/@wesual?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Wesual Click</a> on <a href="https://unsplash.com/collections/97471657/bread?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
     </div>
   );
 }

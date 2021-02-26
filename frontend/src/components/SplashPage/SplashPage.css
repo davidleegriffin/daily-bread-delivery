@@ -257,3 +257,23 @@
             transform: scale(1) rotate3d(-1, 1, 0, 360deg);
   }
 }
+
+
+.splash__attribution {
+  font-family: Indie Flower;
+  font-size: 20px;
+  position: absolute;
+  bottom: -75px;
+  left: 750px;
+  /* text-decoration: none; */
+}
+
+.splash__attribution a {
+  text-decoration: none;
+  color: black;
+}
+
+.splash__attribution a:hover {
+  color: blue;
+  border-bottom: 1px solid black;
+}
