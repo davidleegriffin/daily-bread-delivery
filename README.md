@@ -8,7 +8,6 @@
 - shopping cart/checkout
 - users invoices
 - reviews
-- BONUS ability to upload photos
 
 
 # Frontend
