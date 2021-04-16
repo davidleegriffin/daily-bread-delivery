@@ -13,6 +13,7 @@
 # Frontend
 
 - Uses React/Redux (todo: add screen shots and paragraph)
+- uses react-slick library to handle carousel
 
 
 # Backend
